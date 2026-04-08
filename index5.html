@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merveilleux Abandon — Armelle de Thé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noir: #0D0D0D;
+    --noir-doux: #1A1A1A;
+    --gris-fonce: #2A2A2A;
+    --gris-moyen: #555;
+    --gris-clair: #999;
+    --ivoire: #F8F5EF;
+    --ivoire-chaud: #F0EBE0;
+    --ivoire-fonce: #E8E0D0;
+    --blanc: #FDFCFA;
+    --accent: #1A1A1A;
+    --ligne: rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivoire);
+    color: var(--noir);
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ═══════════════════
+     NAVIGATION
+  ═══════════════════ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5rem;
+    background: rgba(248, 245, 239, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--ligne);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--noir);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gris-moyen);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--noir);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--noir); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* ═══════════════════
+     HERO
+  ═══════════════════ */
+  #hero {
+    background: var(--ivoire);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-gauche {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 8rem 1rem 8rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-size: 0.63rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(13,13,13,0.4);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    animation: revealLeft 1s 0.3s ease both;
+    opacity: 0;
+    max-width: 380px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 30px; height: 1px;
+    background: rgba(13,13,13,0.2);
+  }
+
+  .hero-titre {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 0.95;
+    color: var(--noir);
+    margin-bottom: 0.2rem;
+    animation: revealLeft 1s 0.5s ease both;
+    opacity: 0;
+  }
+
+  .hero-titre-italic {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 0.95;
+    color: rgba(13,13,13,0.35);
+    margin-bottom: 3.5rem;
+    animation: revealLeft 1s 0.6s ease both;
+    opacity: 0;
+  }
+
+  .hero-sous-titre {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(13,13,13,0.55);
+    margin-bottom: 4rem;
+    line-height: 1.6;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(13,13,13,0.15);
+    animation: revealLeft 1s 0.8s ease both;
+    opacity: 0;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 4rem;
+    animation: revealLeft 1s 1s ease both;
+    opacity: 0;
+  }
+
+  .hero-meta-ligne {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: rgba(13,13,13,0.35);
+  }
+
+  .hero-meta-ligne span { color: rgba(13,13,13,0.7); }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    animation: revealLeft 1s 1.2s ease both;
+    opacity: 0;
+  }
+
+  .btn-blanc {
+    padding: 0.95rem 2.8rem;
+    background: var(--ivoire);
+    color: var(--noir);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-blanc:hover { background: var(--blanc); transform: translateY(-2px); }
+
+  .btn-ligne {
+    padding: 0.95rem 2.8rem;
+    background: transparent;
+    color: rgba(13,13,13,0.6);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(13,13,13,0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-ligne:hover {
+    border-color: rgba(13,13,13,0.6);
+    color: var(--noir);
+  }
+
+  .hero-droite {
+    display: none;
+  }
+
+
+
+  .hero-livre-visuel {
+    width: 260px;
+    aspect-ratio: 2/3;
+    background: #ffffff;
+    position: relative;
+    box-shadow:
+      -30px 30px 80px rgba(0,0,0,0.6),
+      -5px 5px 20px rgba(0,0,0,0.4);
+    animation: revealRight 1.2s 0.8s ease both;
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-8deg);
+  }
+
+  .hero-livre-visuel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 8px; height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  }
+
+  .hero-livre-interieur {
+    padding: 3rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .livre-visuel-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--noir);
+    line-height: 1.1;
+  }
+
+  .livre-visuel-titre em {
+    font-style: italic;
+    color: var(--gris-moyen);
+    display: block;
+  }
+
+  .livre-visuel-trait {
+    width: 30px; height: 1px;
+    background: var(--noir);
+    opacity: 0.2;
+  }
+
+  .livre-visuel-auteure {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+  }
+
+  @keyframes revealLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes revealRight {
+    from { opacity: 0; transform: perspective(1000px) rotateY(-8deg) translateX(40px); }
+    to { opacity: 1; transform: perspective(1000px) rotateY(-8deg) translateX(0); }
+  }
+
+  /* ═══════════════════
+     PITCH BANDE
+  ═══════════════════ */
+  .pitch-bande {
+    background: var(--ivoire);
+    padding: 0.3rem 5rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    overflow: hidden;
+  }
+
+  .pitch-chiffre {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.08);
+    flex-shrink: 0;
+  }
+
+  .pitch-texte {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(248,245,239,0.6);
+    line-height: 1.6;
+    flex: 1;
+    border-left: 1px solid rgba(248,245,239,0.1);
+    padding-left: 3rem;
+  }
+
+  /* ═══════════════════
+     SECTIONS COMMUNES
+  ═══════════════════ */
+  .s-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .s-label::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: currentColor;
+  }
+
+  .s-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--noir);
+    margin-bottom: 2rem;
+  }
+
+  .s-titre em { font-style: italic; color: var(--gris-moyen); }
+
+  /* ═══════════════════
+     LE LIVRE
+  ═══════════════════ */
+  #livre {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 80vh;
+  }
+
+  .livre-gauche {
+    padding: 3rem 5rem 5rem 8rem;
+    background: var(--blanc);
+    border-right: 1px solid var(--ligne);
+  }
+
+  .livre-droite {
+    padding: 3rem 5rem;
+    background: var(--ivoire-chaud);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .synopsis p {
+    font-size: 0.88rem;
+    line-height: 1.95;
+    color: var(--gris-fonce);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .extrait-bloc {
+    background: var(--noir);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .extrait-bloc::before {
+    content: '«';
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: rgba(248,245,239,0.06);
+    position: absolute;
+    top: 1rem; left: 2rem;
+    line-height: 1;
+  }
+
+  .extrait-bloc p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.75);
+    position: relative;
+    z-index: 1;
+  }
+
+  .livre-infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--ligne);
+    border: 1px solid var(--ligne);
+  }
+
+  .info-item {
+    background: var(--ivoire-chaud);
+    padding: 1.8rem;
+    transition: background 0.3s;
+  }
+
+  .info-item:hover { background: var(--ivoire-fonce); }
+
+  .info-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    margin-bottom: 0.5rem;
+  }
+
+  .info-valeur {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--noir);
+  }
+
+  /* ═══════════════════
+     AUTEURE
+  ═══════════════════ */
+  #auteure {
+    background: var(--ivoire);
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 8rem;
+    align-items: start;
+  }
+
+  .auteure-sticky {
+    position: sticky;
+    top: 8rem;
+  }
+
+  .portrait-encadre {
+    aspect-ratio: 3/4;
+    background: var(--ivoire-fonce);
+    border: 1px solid var(--ligne);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .portrait-initiales {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(0,0,0,0.1);
+    letter-spacing: 0.2em;
+  }
+
+  .portrait-nom {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--noir);
+    margin-bottom: 0.3rem;
+  }
+
+  .portrait-role {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+  }
+
+  .bio-contenu .s-titre { margin-bottom: 3rem; }
+
+  .bio-p {
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--gris-fonce);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .citation-encadree {
+    margin: 3rem 0;
+    padding: 2.5rem 3rem;
+    background: var(--noir);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .citation-encadree::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: var(--ivoire);
+    opacity: 0.1;
+  }
+
+  .citation-encadree p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.8);
+    margin-bottom: 1.2rem;
+  }
+
+  .citation-encadree cite {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.3);
+    font-style: normal;
+  }
+
+  /* ═══════════════════
+     ILLUSTRATIONS
+  ═══════════════════ */
+  #illustrations {
+    background: var(--noir);
+    padding: 3rem 8rem;
+  }
+
+  .illu-entete {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: end;
+    margin-bottom: 6rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(248,245,239,0.06);
+  }
+
+  #illustrations .s-label { color: rgba(248,245,239,0.3); }
+  #illustrations .s-titre { color: var(--ivoire); }
+
+  .illu-intro-txt {
+    font-size: 0.88rem;
+    line-height: 1.95;
+    color: rgba(248,245,239,0.4);
+    font-weight: 300;
+  }
+
+  .illu-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background: rgba(248,245,239,0.05);
+    margin-bottom: 6rem;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .illu-item {
+    background: var(--noir);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .illu-image-zone {
+    aspect-ratio: 3/4;
+    background: var(--ivoire);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  .illu-item:hover .illu-image-zone {
+    transform: scale(1.03);
+  }
+
+  .illu-img-placeholder {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: rgba(248,245,239,0.04);
+    user-select: none;
+  }
+
+  .illu-info {
+    padding: 2rem;
+    border-top: 1px solid rgba(248,245,239,0.05);
+  }
+
+  .illu-num {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(248,245,239,0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .illu-nom {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(248,245,239,0.7);
+    margin-bottom: 0.4rem;
+  }
+
+  .illu-tech {
+    font-size: 0.7rem;
+    color: rgba(248,245,239,0.25);
+    line-height: 1.5;
+  }
+
+  .zoe-bio-bande {
+    display: grid;
+    grid-template-columns: auto 1px 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(248,245,239,0.06);
+  }
+
+  .zoe-identite {}
+
+  .zoe-prenom {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(248,245,239,0.8);
+    margin-bottom: 0.3rem;
+  }
+
+  .zoe-metier {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.25);
+  }
+
+  .zoe-separateur {
+    width: 1px; height: 60px;
+    background: rgba(248,245,239,0.1);
+  }
+
+  .zoe-phrase {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: rgba(248,245,239,0.35);
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ═══════════════════
+     DOCUMENTAIRE
+  ═══════════════════ */
+  #documentaire {
+    background: var(--ivoire-chaud);
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  .doc-visuel {
+    aspect-ratio: 16/9;
+    background: var(--noir);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .doc-visuel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(248,245,239,0.02) 8px,
+      rgba(248,245,239,0.02) 9px
+    );
+  }
+
+  .doc-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    border: 1px solid rgba(248,245,239,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+
+  .doc-visuel:hover .doc-play {
+    background: rgba(248,245,239,0.08);
+    border-color: rgba(248,245,239,0.5);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .doc-play-triangle {
+    width: 0; height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid rgba(248,245,239,0.6);
+    margin-left: 4px;
+  }
+
+  .doc-label-film {
+    position: absolute;
+    bottom: 1.5rem; left: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.3);
+  }
+
+  .doc-texte .s-titre { margin-bottom: 2rem; }
+
+  .doc-p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--gris-fonce);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .doc-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 2.5rem 0;
+    padding: 2rem;
+    border: 1px solid var(--ligne);
+    background: var(--blanc);
+  }
+
+  .doc-detail-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--ligne);
+    font-size: 0.78rem;
+  }
+
+  .doc-detail-ligne:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .doc-detail-cle {
+    color: var(--gris-clair);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+  }
+
+  .doc-detail-val {
+    color: var(--noir);
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  /* ═══════════════════
+     PRESSE
+  ═══════════════════ */
+  #presse {
+    background: var(--blanc);
+    padding: 3rem 8rem;
+  }
+
+  .presse-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-bottom: 5rem;
+    align-items: end;
+  }
+
+  .presse-sous-intro {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--gris-moyen);
+    font-weight: 300;
+  }
+
+  .presse-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--ligne);
+    border: 1px solid var(--ligne);
+  }
+
+  .presse-carte {
+    background: var(--blanc);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+
+  .presse-carte:hover { background: var(--ivoire); }
+
+  .presse-icone {
+    width: 36px; height: 36px;
+    border: 1px solid var(--ligne);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--gris-clair);
+    transition: all 0.3s;
+  }
+
+  .presse-carte:hover .presse-icone {
+    background: var(--noir);
+    color: var(--ivoire);
+    border-color: var(--noir);
+  }
+
+  .presse-titre-c {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--noir);
+    line-height: 1.3;
+  }
+
+  .presse-desc-c {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .presse-action {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0;
+  }
+
+  .presse-carte:hover .presse-action { color: var(--noir); }
+  .presse-action::after { content: '↗'; }
+
+  /* ═══════════════════
+     NEWSLETTER
+  ═══════════════════ */
+  #newsletter {
+    background: var(--noir);
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: center;
+  }
+
+  .nl-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ivoire);
+    margin-bottom: 1.5rem;
+  }
+
+  .nl-titre em {
+    font-style: italic;
+    color: rgba(248,245,239,0.4);
+  }
+
+  .nl-desc {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: rgba(248,245,239,0.35);
+    font-weight: 300;
+  }
+
+  .nl-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nl-input {
+    padding: 1.1rem 1.5rem;
+    background: rgba(248,245,239,0.04);
+    border: 1px solid rgba(248,245,239,0.1);
+    color: var(--ivoire);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .nl-input::placeholder { color: rgba(248,245,239,0.2); }
+  .nl-input:focus { border-color: rgba(248,245,239,0.3); }
+
+  .nl-btn {
+    padding: 1.1rem;
+    background: var(--ivoire);
+    color: var(--noir);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .nl-btn:hover { background: var(--blanc); }
+
+  .nl-mention {
+    font-size: 0.65rem;
+    color: rgba(248,245,239,0.18);
+    line-height: 1.6;
+  }
+
+  /* ═══════════════════
+     FOOTER
+  ═══════════════════ */
+  footer {
+    background: #080808;
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid rgba(248,245,239,0.04);
+  }
+
+  .footer-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .footer-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.25);
+  }
+
+  .footer-copy {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: rgba(248,245,239,0.1);
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.2);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-nav a:hover { color: rgba(248,245,239,0.6); }
+
+  /* ═══════════════════
+     THÈMES
+  ═══════════════════ */
+  #themes {
+    background: var(--blanc);
+    padding: 3rem 8rem;
+    border-top: 1px solid var(--ligne);
+  }
+
+  .themes-entete {
+    max-width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .themes-intro {
+    font-size: 0.9rem;
+    line-height: 1.95;
+    color: var(--gris-moyen);
+    font-weight: 300;
+    margin-top: 1.5rem;
+    text-align: justify;
+  }
+
+  .themes-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .theme-carte {
+    background: var(--blanc);
+    padding: 2.2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid transparent;
+    border-right: 1px solid var(--ligne);
+    transition: background 0.35s ease, border-bottom-color 0.35s ease;
+  }
+
+  .theme-carte:nth-child(4n) { border-right: none; }
+
+  .theme-carte:hover {
+    background: var(--noir);
+    border-bottom-color: var(--noir);
+  }
+
+  .theme-num {
+    font-size: 0.58rem;
+    font-weight: 400;
+    color: var(--gris-clair);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+  .theme-carte:hover .theme-num {
+    color: rgba(248,245,239,0.25);
+  }
+
+  .theme-corps { flex: 1; }
+
+  .theme-titre-c {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--noir);
+    line-height: 1.3;
+    transition: color 0.3s;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--noir);
+  }
+  .theme-carte:hover .theme-titre-c {
+    color: var(--ivoire);
+    border-left-color: rgba(248,245,239,0.3);
+  }
+
+  /* Description visible seulement au survol */
+  .theme-desc-c {
+    font-size: 0.76rem;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.6);
+    font-weight: 300;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding-left: 0.8rem;
+    transition: max-height 0.45s ease, opacity 0.35s ease 0.1s, margin-top 0.3s ease;
+  }
+  .theme-carte:hover .theme-desc-c {
+    max-height: 160px;
+    opacity: 1;
+    margin-top: 0.8rem;
+  }
+
+  /* ═══════════════════
+     RESPONSIVE
+  ═══════════════════ */
+  /* ═══ TABLETTE (max 1024px) ═══ */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.6rem; }
+    .hamburger { display: flex; }
+
+    #hero { grid-template-columns: 1fr; }
+    .hero-droite { display: none; }
+    .hero-gauche { padding: 3rem 2.5rem 5rem; }
+
+    #livre, #auteure, #documentaire, #newsletter {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 3rem 2.5rem;
+    }
+
+    #themes { padding: 3rem 2.5rem; }
+    .themes-grille { grid-template-columns: repeat(2, 1fr); }
+
+    #illustrations { padding: 3rem 2.5rem; }
+    .illu-entete { grid-template-columns: 1fr 240px !important; gap: 2rem; }
+    .illu-grille { grid-template-columns: repeat(3, 1fr); }
+
+    #presse { padding: 3rem 2.5rem; }
+    .presse-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .presse-grille { grid-template-columns: repeat(2, 1fr); }
+
+    .pitch-bande { padding: 2rem 2.5rem; flex-direction: column; gap: 1rem; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; }
+    .auteure-sticky { position: static; }
+  }
+
+  /* ═══ MOBILE (max 768px) ═══ */
+  @media (max-width: 768px) {
+
+    /* Navigation mobile */
+    nav {
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--ivoire);
+      z-index: 998;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 1.1rem !important;
+      letter-spacing: 0.2em;
+      color: var(--noir) !important;
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero-gauche { padding: 3rem 1.5rem; }
+    .hero-titre { font-size: 3.2rem; }
+    .hero-titre-italic { font-size: 3.2rem; }
+    .hero-sous-titre { font-size: 0.95rem; }
+    .hero-actions { flex-direction: column; gap: 0.8rem; }
+    .btn-blanc, .btn-ligne { text-align: center; }
+
+    /* Pitch bande */
+    .pitch-bande { flex-direction: column; padding: 2rem 1.5rem; gap: 1rem; }
+    .pitch-chiffre { font-size: 2rem; }
+    .pitch-texte { padding-left: 0; border-left: none; border-top: 1px solid rgba(248,245,239,0.1); padding-top: 1rem; font-size: 1rem; }
+
+    /* Sections communes */
+    #livre { padding: 3rem 1.5rem; gap: 2.5rem; }
+    .livre-gauche, .livre-droite { padding: 0; }
+    .livre-infos { grid-template-columns: 1fr 1fr; }
+
+    /* Thèmes */
+    #themes { padding: 3rem 1.5rem; }
+    .themes-grille { grid-template-columns: 1fr; }
+    .theme-carte { padding: 1.8rem 1.5rem; }
+
+    /* Illustrations */
+    #illustrations { padding: 3rem 1.5rem; }
+    .illu-entete {
+      grid-template-columns: 1fr !important;
+      gap: 2rem;
+    }
+    .illu-grille { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Auteure */
+    #auteure { padding: 3rem 1.5rem; gap: 2.5rem; }
+    .auteure-sticky { position: static; }
+    .portrait-encadre { max-height: 400px; }
+
+    /* Documentaire */
+    #documentaire { padding: 3rem 1.5rem; gap: 2.5rem; }
+
+    /* Presse */
+    #presse { padding: 3rem 1.5rem; }
+    .presse-grille { grid-template-columns: 1fr; }
+    .presse-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Newsletter */
+    #newsletter { padding: 3rem 1.5rem; gap: 3rem; }
+
+    /* Footer */
+    footer {
+      padding: 2rem 1.5rem;
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .footer-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.5rem;
+    }
+
+    /* Titres */
+    .s-titre { font-size: 1.8rem; }
+  }
+
+  /* ═══ TRÈS PETIT MOBILE (max 480px) ═══ */
+  @media (max-width: 480px) {
+    .nav-links { gap: 0.6rem 1rem; }
+    .hero-titre, .hero-titre-italic { font-size: 2.6rem; }
+    .livre-infos { grid-template-columns: 1fr; }
+    .presse-grille { grid-template-columns: 1fr; }
+    .themes-grille { grid-template-columns: 1fr; }
+    .illu-grille { grid-template-columns: 1fr; }
+  }
+
+  /* ═══ HAMBURGER MENU ═══ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 999;
+    position: relative;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--noir);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  #nav-links.open {
+    display: flex !important;
+  }
+
+
+  @media (min-width: 769px) {
+    .nav-links {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      background: none;
+      height: auto;
+      padding: 0;
+      gap: 3rem;
+    }
+    .nav-links a {
+      font-size: 0.68rem !important;
+      color: var(--gris-moyen) !important;
+    }
+    .hamburger {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bandeau-accueil {
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      gap: 1.5rem;
+      margin-top: 56px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bandeau-marc { flex-direction: column !important; padding: 2rem 1.5rem !important; gap: 1.5rem !important; }
+  }
+
+  .themes-categorie {
+    margin-bottom: 4rem;
+  }
+
+  .themes-cat-titre {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gris-clair);
+    margin-bottom: 1px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ligne);
+    margin-bottom: 1px;
+  }
+
+</style>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">Merveilleux Abandon</div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#livre" onclick="closeMenu()">Le livre</a></li>
+    <li><a href="#auteure" onclick="closeMenu()">L'auteure</a></li>
+    <li><a href="#themes" onclick="closeMenu()">Thèmes</a></li>
+    <li><a href="#illustrations" onclick="closeMenu()">Illustrations</a></li>
+    <li><a href="#documentaire" onclick="closeMenu()">Documentaire</a></li>
+    <li><a href="#presse" onclick="closeMenu()">Presse</a></li>
+    <li><a href="#newsletter" onclick="closeMenu()">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- BANDEAU ACCUEIL -->
+<section style="background:transparent;padding:1rem 4rem;margin-top:60px;">
+  <div style="max-width:1100px;margin:0 auto;background:#F0EBE0;border-radius:4px;padding:0.6rem 2rem;display:flex;align-items:center;gap:2rem;">
+
+    <!-- Photo ronde gauche — déborde de la cartouche -->
+<div style="flex-shrink:0;width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,0,0,0.1);margin-top:-45px;margin-bottom:-45px;">
+  <img src="ARMELLE DE THE-4195.jpg"
+       style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"
+       alt="Armelle de Thé">
+</div>
+
+    <!-- Texte -->
+    <div style="flex:1;">
+      <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;line-height:1.55;color:#3a3028;margin:0 0 0.5rem 0;">
+        <br>Il y a 4 ans, je commençais à écrire. Aujourd'hui, <strong><em>Merveilleux Abandon</em></strong> voit le jour. Publié aux <a href="https://editions-jouvence.com" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Editions Jouvence</a>, sa sortie est programmée le 21 mai 2026. <strong><em>3 femmes, 1 route</em></strong>, le documentaire qui lui fait écho, est en développement chez <a href="https://www.abelstudios.fr" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Abel Studios</a>. Deux œuvres, une seule histoire, que j'ai plaisir à partager avec vous. Bonne lecture.<br><br>
+        <span style="font-style:normal;font-weight:400;font-size:0.95rem;">Armelle de Thé</span>
+      </p>
+      <div style="display:flex;justify-content:flex-end;">
+        <a href="/cdn-cgi/l/email-protection#20434f4e544143546041524d454c4c4544454c415448450e4652" style="display:inline-block;padding:0.35rem 1.5rem;border:1.5px solid #3a3028;color:#3a3028;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#3a3028';this.style.color='#F0EBE0'" onmouseout="this.style.background='transparent';this.style.color='#3a3028'">
+          M'écrire
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-gauche">
+
+    <!-- Ligne du haut : label + titre + boutons -->
+    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:2rem;margin-bottom:2.5rem;">
+      <div>
+        <div class="s-label" style="color:var(--gris-moyen);">Livre - Autobiographique — 2026</div>
+        <h1 class="hero-titre">Merveilleux <em style="font-style:italic;color:rgba(13,13,13,0.35);">Abandon</em></h1>
+        <p class="hero-sous-titre" style="margin-bottom:0;">Récit d'une expérience humaine et universelle</p>
+      </div>
+      <div class="hero-actions" style="margin-top:0;flex-shrink:0;">
+        <a href="#newsletter" class="btn-ligne">Pré-commander</a>
+        <a href="#newsletter" class="btn-blanc">Être informée</a>
+      </div>
+    </div>
+
+    <!-- Cartouche texte pleine largeur -->
+    <div style="width:100%;background:var(--noir-doux);border-radius:2px;padding:3rem 3.5rem;">
+    <div class="synopsis">
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;"><em>Merveilleux Abandon</em> est l'histoire d'une aventure intérieure — cash, drôle et profondément humaine, il retrace mon parcours marqué par l'abandon et l'adoption.</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">Nous portons tous, en quelque sorte, une part niée. Une part que la vie a recouverte, lentement, sûrement — pour satisfaire les attentes d'une famille, d'un milieu, d'une époque. Ce bout de nous qui se tait, qui attend, qui résiste a besoin de nous pour renaître. Si vous connaissez cette sensation, alors <em>Merveilleux Abandon</em> est pour vous.</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">Pour moi, cet effacement a eu lieu le 27 juin 1967, sur une table de maternité. Ce fut radical, concret, impossible à ignorer. Parce que rien ne disparaît et que toutes nos expériences s'enracinent en nous : j'ai intentionnellement donné la parole au fœtus et au bébé nié et oublié dans un orphelinat que j'ai été.</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">Au fil des années et des rencontres, j'ai compris une chose : la blessure d'abandon, chacun la connaît. Pas forcément à la naissance — parfois c'est un deuil qui fait s'effondrer ce qu'on croyait solide, une séparation qui remet tout en question, un licenciement qui brise ce qu'on avait construit. Les formes sont toutes singulières et personnelles, mais la souffrance, elle, est universelle. Et sous ce poids, toujours, la même interrogation : qui suis-je, maintenant que je ne suis plus ce que j'étais ?</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">Pendant cinquante ans, j'ai tenté d'y répondre de travers. J'ai été Armelle en niant Martine, j'ai construit une identité solide en enterrant l'autre. Jusqu'au jour où cette façade a cessé de me nourrir.</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">Ce livre déroule le chemin du retour — à soi. Non pas la réconciliation avec une mère biologique, ni une tribune sur la naissance sous X, mais quelque chose de bien plus intime et bien plus universel : le moment où l'on cesse de se trahir soi-même pour être enfin ce que l'on est vraiment.</p>
+
+      <p style="color:rgba(248,245,239,0.85);font-size:0.9rem;line-height:1.8;margin-bottom:1.2rem;">C'est douloureux, oui. C'est aussi la seule aventure qui vaille. Retrouver cet être premier, ce bébé intérieur qui ne nous a jamais quitté.</p>
+
+      <p style="color:rgba(248,245,239,0.7);font-family:'Playfair Display',serif;font-style:italic;font-size:0.95rem;margin-bottom:1.5rem;"><em>La vie m'avait abandonnée à la naissance. Aujourd'hui, je m'abandonne à elle.</em></p>
+
+      <p style="color:rgba(248,245,239,0.6);font-family:'Playfair Display',serif;font-style:italic;font-size:0.9rem;">Armelle de Thé</p>
+    </div><!-- end synopsis -->
+    </div><!-- end cartouche -->
+
+  </div>
+
+<!-- PITCH BANDE -->
+<div class="pitch-bande">
+  <p class="pitch-texte" style="font-size:1.5rem;white-space:nowrap;text-align:center;width:100%;display:block;margin:0 auto;">La vie m'avait abandonnée lors de ma naissance, aujourd'hui, je m'abandonne à elle.</p>
+</div>
+
+<!-- ILLUSTRATIONS -->
+<section id="illustrations">
+  <div class="illu-entete" style="display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(248,245,239,0.06);">
+    <div>
+      <div class="s-label">Les illustrations</div>
+      <h2 class="s-titre illu-titre-anim" style="color:var(--ivoire);">L'art de <em>Zoé Le Gavrian</em></h2>
+      <div style="margin-bottom:1.2rem;">
+        <div class="zoe-metier" style="color:#ffffff;letter-spacing:0.2em;font-size:0.65rem;">ACTRICE · AUTRICE · CRÉATRICE DE CONTENU · ILLUSTRATRICE</div>
+      </div>
+      <p class="illu-intro-txt">Fille d'Armelle de Thé, elle a illustré <em>Merveilleux Abandon</em> au crayon à papier, donnant une forme visuelle à une histoire qu'elle connaît de l'intérieur.</p>
+
+      <p style="font-size:0.88rem;line-height:1.95;color:rgba(248,245,239,0.5);font-weight:300;margin-top:1.5rem;font-style:italic;">Cette collaboration n'est pas un détail — c'est un deuxième cœur narratif. Cette mise en abyme poétique et puissante est un témoignage sur la filiation, l'identité et la transmission. Réunir deux générations qui ne se croisent pas habituellement sur la quête d'identité et qui pourtant, vont se découvrir mutuellement grâce à ce livre.</p>
+    </div>
+    <div style="overflow:hidden;border:1px solid rgba(248,245,239,0.1);max-width:220px;margin:0 auto;">
+      <img src="Zoe3533.jpg"
+           style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;aspect-ratio:3/4;"
+           alt="Zoe Le Gavrian">
+    </div>
+  </div>
+
+  <div class="illu-grille">
+    <div class="illu-item">
+      <div class="illu-image-zone" style="background:#f0ede6;">
+        <img src="nonne.jpg"
+             style="width:100%;height:100%;object-fit:cover;display:block;"
+             alt="La religieuse">
+      </div>
+      <div class="illu-info">
+        <div class="illu-num">Illustration 01</div>
+        <div class="illu-nom">La religieuse</div>
+        <div class="illu-tech">Crayon — portrait de profil, saisissant de vérité</div>
+      </div>
+    </div>
+    <div class="illu-item">
+      <div class="illu-image-zone" style="background:#f0ede6;">
+        <img src="oeil.jpg"
+             style="width:100%;height:100%;object-fit:cover;display:block;"
+             alt="L'œil qui pleure">
+      </div>
+      <div class="illu-info">
+        <div class="illu-num">Illustration 02</div>
+        <div class="illu-nom">L'œil qui pleure</div>
+        <div class="illu-tech">Crayon — une larme, une émotion brute et universelle</div>
+      </div>
+    </div>
+    <div class="illu-item">
+      <div class="illu-image-zone" style="background:#f0ede6;">
+        <img src="solitude.jpg"
+             style="width:100%;height:100%;object-fit:cover;display:block;"
+             alt="Solitude">
+      </div>
+      <div class="illu-info">
+        <div class="illu-num">Illustration 03</div>
+        <div class="illu-nom">Solitude</div>
+        <div class="illu-tech">Crayon — une petite silhouette face à ses démons</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-top:0.2rem;border-top:1px solid rgba(248,245,239,0.08);text-align:center;max-width:800px;margin:0 auto;">
+    <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;font-weight:300;color:rgba(248,245,239,0.7);line-height:1.7;white-space:nowrap;">
+      Zoé ne décore pas le texte — elle le traduit. Chaque illustration est une vérité visuelle que les mots seuls ne pouvaient pas dire.
+    </p>
+  </div>
+</section>
+
+
+<!-- THÈMES -->
+<section id="themes">
+  <div class="themes-entete">
+    <div class="s-label">Les thèmes</div>
+    <h2 class="s-titre">Une densité<br><em>thématique rare</em></h2>
+    <p class="themes-intro"><em>Merveilleux Abandon</em> est l'un de ces livres rares qui touchent simultanément à presque tous les grands thèmes de l'existence humaine — la naissance et la mort, l'amour et la blessure, l'identité et la transformation, le corps et l'âme, l'individu et la société. C'est précisément cette densité thématique qui en fait un objet littéraire et humain d'une richesse exceptionnelle, et qui justifie qu'il puisse être lu, commenté et prescrit depuis des univers éditoriaux aussi différents que la psychologie, la spiritualité, la littérature, la sociologie ou le droit.</p>
+  </div>
+
+  <!-- CATÉGORIE 1 -->
+  <div class="themes-categorie">
+    <div class="themes-cat-titre">Les thèmes fondateurs — le cœur du livre</div>
+    <div class="themes-grille">
+
+      <div class="theme-carte">
+        <div class="theme-num">01</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">L'abandon</div>
+          <p class="theme-desc-c">La blessure originelle qui structure tout le récit. L'abandon subi à la naissance, l'abandon institutionnel, l'abandon affectif dans les structures d'accueil, les abandons successifs tout au long de la vie — et finalement l'abandon consenti à soi-même comme acte de libération.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">02</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">L'identité fracturée</div>
+          <p class="theme-desc-c">La coexistence douloureuse de deux identités — Martine et Marie Armelle — comme métaphore d'une fracture identitaire profonde. La question de savoir qui l'on est vraiment quand on a été contraint d'être quelqu'un d'autre dès le premier jour de sa vie.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">03</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">L'adoption</div>
+          <p class="theme-desc-c">Ses mécanismes juridiques, ses conséquences psychologiques, ses paradoxes affectifs. L'adoption plénière comme effacement légal de l'identité originelle. La différence fondamentale entre être aimé et être soi-même.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">04</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La quête des origines</div>
+          <p class="theme-desc-c">Le besoin viscéral et universel de savoir d'où l'on vient. Les démarches pour retrouver la mère biologique, les obstacles administratifs, la vérité déconcertante au bout du chemin. Ce que l'on cherche vraiment quand on cherche ses origines biologiques.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CATÉGORIE 2 -->
+  <div class="themes-categorie">
+    <div class="themes-cat-titre">Les thèmes psychologiques</div>
+    <div class="themes-grille">
+
+      <div class="theme-carte">
+        <div class="theme-num">05</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">Le bébé intérieur</div>
+          <p class="theme-desc-c">La notion d'enfant intérieur — cette part authentique et originelle que la vie sociale recouvre progressivement. Comment l'ignorer crée des névroses, comment l'écouter permet la réconciliation avec soi-même.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">06</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">Les blessures fondamentales</div>
+          <p class="theme-desc-c">Les sept blessures identifiées dans le livre — rejet, abandon, humiliation, trahison, injustice, dévalorisation, privation — et leurs mécanismes de défense respectifs. Comment ces blessures se transmettent de génération en génération.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">07</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La mémoire cellulaire</div>
+          <p class="theme-desc-c">L'idée que le corps garde trace de tout — des traumatismes prénataux, des chocs émotionnels précoces, des mémoires enfouies inaccessibles à la conscience ordinaire. Les séances avec Madame Langer comme révélateur de ce que la psychanalyse classique n'avait pas atteint.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">08</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">L'attachement et ses blessures</div>
+          <p class="theme-desc-c">La théorie de l'attachement à l'œuvre dans le récit. Les conséquences d'un attachement précoce perturbé — nourrice négligente, orphelinat, religieuses austères — sur toute une vie relationnelle.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CATÉGORIE 3 -->
+  <div class="themes-categorie">
+    <div class="themes-cat-titre">Les thèmes familiaux et relationnels</div>
+    <div class="themes-grille">
+
+      <div class="theme-carte">
+        <div class="theme-num">09</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">Le deuil</div>
+          <p class="theme-desc-c">La mort de Suzanne, privée des derniers mots. La mort de Jehan, le 1er janvier, après avoir dit la phrase la plus belle de toute une vie. Le deuil comme déclencheur d'une crise identitaire mais aussi comme libérateur.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">10</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La relation père-fille</div>
+          <p class="theme-desc-c">Jehan comme figure de douceur et d'exemplarité dans un monde familial par ailleurs rigide. La phrase finale de Jehan comme cadeau posthume inestimable. La place du père dans la construction identitaire d'une fille.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">11</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La fratrie adoptive</div>
+          <p class="theme-desc-c">Les frères et sœurs adoptifs, leur place dans la dynamique familiale, les rivalités et les solidarités, les tensions autour de l'héritage — affectif autant que matériel.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">12</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La transmission</div>
+          <p class="theme-desc-c">Ce que l'on transmet à ses enfants — consciemment et inconsciemment. La peur de transmettre ses propres blessures. La question de l'hérédité et de l'épigénétique — ce que le corps transmet que les mots ne disent pas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CATÉGORIE 4 -->
+  <div class="themes-categorie">
+    <div class="themes-cat-titre">Les thèmes spirituels et philosophiques</div>
+    <div class="themes-grille">
+
+      <div class="theme-carte">
+        <div class="theme-num">13</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">L'âme et l'incarnation</div>
+          <p class="theme-desc-c">La conviction que nous préexistons à notre corps et choisissons les conditions de notre incarnation. Le récit débutant par une âme désincarnée comme affirmation philosophique sur la nature de l'existence.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">14</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">Le sens de la souffrance</div>
+          <p class="theme-desc-c">La souffrance non comme injustice à réparer mais comme pédagogie de l'âme. La conviction progressive que rien n'est accidentel, que tout ce que l'on traverse était nécessaire à la trajectoire de l'âme.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">15</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La synchronicité</div>
+          <p class="theme-desc-c">Les coïncidences significatives comme langage du divin. La lettre retrouvée au bon moment, l'homme mystérieux auprès du corps de Suzanne, les anagrammes découverts en rêve. L'attention aux signes comme pratique spirituelle.</p>
+        </div>
+      </div>
+
+      <div class="theme-carte">
+        <div class="theme-num">16</div>
+        <div class="theme-corps">
+          <div class="theme-titre-c">La foi personnelle hors dogme</div>
+          <p class="theme-desc-c">Un rapport au divin construit hors de toute institution religieuse. La séparation entre la religion comme système de contrôle et la foi comme relation personnelle au sacré.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- AUTEURE -->
+<section id="auteure">
+  <div class="auteure-sticky">
+    <div class="portrait-encadre" style="overflow:hidden;">
+      <img src="armelle-enfant.jpg"
+        style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"
+        alt="Armelle de Thé enfant — signature par la main de son père">
+    </div>
+    <div class="portrait-nom" style="margin-top:1rem;">Armelle de Thé</div>
+    <div class="portrait-role">Auteure · Lyon, vers 1972 · signature par la main de son père</div>
+  </div>
+  <div class="bio-contenu">
+    <div class="s-label">L'auteure</div>
+    <h2 class="s-titre">Née de deux mères,<br>écrite par <em>une seule voix</em></h2>
+
+    <p class="bio-p">Née le 27 juin 1967 sous le prénom de Martine, adoptée six mois plus tard par Jehan et Suzanne de Thé, Armelle de Thé a grandi dans une famille aristocratique sans jamais connaître ses origines.</p>
+
+    <p class="bio-p">Tout en menant une carrière dans l'audiovisuel — journaliste, réalisatrice et productrice — elle devient mère de trois enfants. C'est à la naissance de son troisième enfant, Hector, qu'Armelle ressent le besoin de comprendre son histoire.</p>
+
+    <div class="citation-encadree">
+      <p>« J'ai écrit ce livre pour tous ceux qui ont grandi avec un trou dans leur histoire. La blessure d'abandon est universelle. Ce que j'ai voulu montrer, c'est qu'elle peut devenir une force — à condition d'avoir le courage de la regarder en face. »</p>
+      <cite>Armelle de Thé</cite>
+    </div>
+
+    <p class="bio-p">Pendant plus de dix-huit ans, elle mène ce travail en silence. C'est pendant le confinement de 2020 qu'elle commence à écrire <em>Merveilleux Abandon</em> — et à réconcilier enfin Martine et Armelle en une seule femme, entière et libre.</p>
+  </div>
+</section>
+<!-- DOCUMENTAIRE -->
+<section id="documentaire">
+  <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#111;">
+    <iframe
+      src="https://player.vimeo.com/video/1175298785"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+      title="Merveilleux Abandon — Documentaire">
+    </iframe>
+  </div>
+
+  <div class="doc-texte">
+    <div class="s-label">Le documentaire</div>
+    <h2 class="s-titre">Au-delà du livre,<br>un <em>témoignage filmé</em></h2>
+
+    <p class="doc-p">En parallèle du livre, Armelle de Thé prépare un documentaire qui prolonge et approfondit le récit de <em>Merveilleux Abandon</em>. Un film intime, filmé au plus près de ce qu'est une filiation par adoption.</p>
+
+    <p class="doc-p">La caméra suit le chemin parcouru — de Lyon à la recherche des origines, de la blessure à la réunification — avec les personnes qui ont compté dans cette histoire. Un documentaire qui met en lumière la lignée particulière d'Armelle de Thé.</p>
+
+    <p class="doc-p">Le film met en scène trois générations : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies.</p>
+
+    <div class="doc-details">
+      <div class="doc-detail-ligne">
+        <span class="doc-detail-cle">Format</span>
+        <span class="doc-detail-val">Documentaire intimiste</span>
+      </div>
+      <div class="doc-detail-ligne">
+        <span class="doc-detail-cle">Thème</span>
+        <span class="doc-detail-val">Adoption, identité, réunification</span>
+      </div>
+      <div class="doc-detail-ligne">
+        <span class="doc-detail-cle">Protagoniste</span>
+        <span class="doc-detail-val">Armelle de Thé</span>
+      </div>
+      <div class="doc-detail-ligne">
+        <span class="doc-detail-cle">Statut</span>
+        <span class="doc-detail-val">En développement</span>
+      </div>
+    </div>
+
+    <a href="#newsletter" class="btn-blanc" style="background:var(--noir);color:var(--ivoire);">Être informée</a>
+  </div>
+</section>
+
+
+<!-- PRESSE -->
+<section id="presse">
+  <div class="presse-intro">
+    <div>
+      <div class="s-label">Presse & médias</div>
+      <h2 class="s-titre">Pour les <em>journalistes</em><br>et prescripteurs</h2>
+    </div>
+    <p class="presse-sous-intro">Armelle de Thé et Zoé Le Gavrian sont disponibles pour des interviews, signatures, lectures publiques et interventions... Tous les éléments nécessaires aux professionnels des médias sont disponibles ci-dessous.</p>
+  </div>
+
+  <div class="presse-grille">
+    <div class="presse-carte">
+      <div class="presse-icone">↓</div>
+      <div class="presse-titre-c">Dossier de presse</div>
+      <p class="presse-desc-c">Synopsis, extraits, biographie, intentions, chiffres clés sur l'adoption en France.</p>
+      <a href="CP Merveilleux abandon.pdf" download class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Télécharger</a>
+    </div>
+    <div class="presse-carte">
+      <div class="presse-icone">✉</div>
+      <div class="presse-titre-c">Demande d'interview</div>
+      <p class="presse-desc-c">Plateau TV, podcast, presse écrite, radio. L'auteure est disponible dans toute la France.</p>
+      <a href="mailto:contact@merveilleuxabandon.fr" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Contacter</a>
+    </div>
+    <div class="presse-carte">
+      <div class="presse-icone">⊞</div>
+      <div class="presse-titre-c">Visuels HD</div>
+      <p class="presse-desc-c">Couverture, photo auteure, illustrations de Zoé Le Gavrian — libres de droits presse.</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;">
+        <a href="ARMELLE DE THE-4195.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Armelle de Thé</a>
+        <a href="armelle-enfant.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Armelle enfant</a>
+        <a href="ARMELLE DE THÉ-Profil.pdf" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Profil Armelle de Thé (PDF)</a>
+        <a href="Zoe3533.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Zoé (couleur)</a>
+        <a href="Zoe3533 N&B.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Zoé (N&B)</a>
+        <a href="nonne.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Nonne</a>
+        <a href="oeil.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Œil</a>
+        <a href="solitude.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Solitude</a>
+      </div>
+    </div>
+    <div class="presse-carte">
+      <div class="presse-icone">◻</div>
+      <div class="presse-titre-c">Service de presse</div>
+      <p class="presse-desc-c">Exemplaire physique ou numérique réservé aux journalistes et chroniqueurs littéraires.</p>
+      <a href="mailto:s.gauthier@editions-jouvence.ch" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Demander</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div>
+    <div class="s-label" style="color:rgba(248,245,239,0.3);">Contact</div>
+    <h2 class="nl-titre">Bonne<br><em>lecture</em></h2>
+    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">C'est avec un immense plaisir que je vous propose de découvrir <em>Merveilleux Abandon</em>, récit de vie qui raconte mon parcours singulier d'enfant abandonnée à la naissance et adoptée tardivement (sortie le 21 mai 2026).</p>
+    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">En parallèle, nous développons avec ma fille Zoé Le Gavrian et Abel Productions, un documentaire : <em>3 femmes, une route</em>. Réalisé par Cidjy Cerlini, il est le premier documentaire sur l'adoption qui met en scène trois générations : l'abandonnante, l'adoptée, et l'enfant de l'adoptée, pour la première fois réunies.</p>
+    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;font-style:italic;">Par avance merci de l'attention que vous portez. Si vous voulez correspondre avec moi, vous pouvez le faire ci-dessous. Soyez assurés que je vous répondrai toujours.</p>
+    <p class="nl-desc" style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(248,245,239,0.8);margin-top:1rem;">Armelle de Thé</p>
+  </div>
+
+  <div>
+    <form class="nl-form" onsubmit="return false;">
+      <input type="text" class="nl-input" placeholder="Votre prénom">
+      <input type="email" class="nl-input" placeholder="Votre adresse email">
+      <button class="nl-btn">Je rejoins la liste</button>
+      <p class="nl-mention">Aucun spam. Désabonnement en un clic. Vos données ne sont jamais partagées.</p>
+    </form>
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-gauche">
+    <div class="footer-titre">Merveilleux Abandon — Armelle de Thé</div>
+    <div class="footer-copy">© 2026 — Tous droits réservés · Illustrations Zoé Le Gavrian</div>
+  </div>
+  <ul class="footer-nav">
+    <li><a href="#hero">Le livre</a></li>
+    <li><a href="#illustrations">Illustrations</a></li>
+    <li><a href="#themes">Thèmes</a></li>
+    <li><a href="#auteure">L'auteure</a></li>
+    <li><a href="#documentaire">Documentaire</a></li>
+    <li><a href="#presse">Presse</a></li>
+    <li><a href="#newsletter">Contact</a></li>
+  </ul>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translate(0, 0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll([
+    '.synopsis p', '.bio-p', '.doc-p',
+    '.info-item', '.presse-carte', '.illu-item',
+    '.extrait-bloc', '.citation-encadree',
+    '.doc-details', '.livre-infos', '.theme-carte'
+  ].join(',')).forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    io.observe(el);
+  });
+
+  document.querySelectorAll('.illu-titre-anim').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-30px)';
+    el.style.transition = 'opacity 1s 0.3s ease, transform 1s 0.3s ease';
+    io.observe(el);
+  });
+
+  const allSections = document.querySelectorAll('section[id]');
+  const allLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    allSections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 150) cur = s.id;
+    });
+    allLinks.forEach(l => {
+      const active = l.getAttribute('href') === '#' + cur;
+      l.style.color = active ? 'var(--noir)' : 'var(--gris-moyen)';
+    });
+  });
+
+  function toggleMenu() {
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('nav-links');
+    btn.classList.toggle('open');
+    nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElemen
