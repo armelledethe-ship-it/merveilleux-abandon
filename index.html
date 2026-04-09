@@ -1378,7 +1378,7 @@
     <!-- Photo ronde gauche — déborde de la cartouche -->
 <div style="flex-shrink:0;width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,0,0,0.1);margin-top:-45px;margin-bottom:-45px;">
   <img src="ARMELLE DE THE-4195.jpg"
-       style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"
+       style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"
        alt="Armelle de Thé">
 </div>
 
@@ -1780,28 +1780,19 @@
       <div class="presse-icone">✉</div>
       <div class="presse-titre-c">Demande d'interview</div>
       <p class="presse-desc-c">Plateau TV, podcast, presse écrite, radio. L'auteure est disponible dans toute la France.</p>
-      <a href="mailto:contact@merveilleuxabandon.fr" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Contacter</a>
+      <a href="/cdn-cgi/l/email-protection#680b07061c090b1c28050d1a1e0d0104040d1d10090a09060c0706460e1a" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Contacter</a>
     </div>
-    <div class="presse-carte">
+    <div class="presse-carte" onclick="window.location.href='visuels.html'">
       <div class="presse-icone">⊞</div>
       <div class="presse-titre-c">Visuels HD</div>
       <p class="presse-desc-c">Couverture, photo auteure, illustrations de Zoé Le Gavrian — libres de droits presse.</p>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;">
-        <a href="ARMELLE DE THE-4195.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Armelle de Thé</a>
-        <a href="armelle-enfant.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Armelle enfant</a>
-        <a href="ARMELLE DE THÉ-Profil.pdf" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Profil Armelle de Thé (PDF)</a>
-        <a href="Zoe3533.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Zoé (couleur)</a>
-        <a href="Zoe3533 N&B.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Photo Zoé (N&B)</a>
-        <a href="nonne.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Nonne</a>
-        <a href="oeil.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Œil</a>
-        <a href="solitude.jpg" download style="color:var(--noir);text-decoration:none;font-size:0.85rem;">↓ Illustration — Solitude</a>
-      </div>
+      <a href="visuels.html" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Accéder aux visuels</a>
     </div>
     <div class="presse-carte">
       <div class="presse-icone">◻</div>
       <div class="presse-titre-c">Service de presse</div>
       <p class="presse-desc-c">Exemplaire physique ou numérique réservé aux journalistes et chroniqueurs littéraires.</p>
-      <a href="mailto:s.gauthier@editions-jouvence.ch" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Demander</a>
+      <a href="/cdn-cgi/l/email-protection#15663b727460617d7c70675570717c617c7a7b66387f7a6063707b76703b767d" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Demander</a>
     </div>
   </div>
 </section>
@@ -1848,7 +1839,7 @@
   </ul>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
 
 <script>
   const io = new IntersectionObserver((entries) => {
@@ -1898,10 +1889,4 @@
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('nav-links');
     btn.classList.toggle('open');
-    nav.classList.toggle('open');
-    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
-  }
-
-  function closeMenu() {
-    const btn = document.getElementById('hamburger');
-    const nav = document.getElemen
+    nav.classList.tog
