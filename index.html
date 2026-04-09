@@ -1354,20 +1354,20 @@
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo">Merveilleux Abandon</div>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;color:var(--noir);">Merveilleux Abandon</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#livre" onclick="closeMenu()">Le livre</a></li>
+    <li><a href="#hero" onclick="closeMenu()">Le livre</a></li>
     <li><a href="#auteure" onclick="closeMenu()">L'auteure</a></li>
     <li><a href="#themes" onclick="closeMenu()">Thèmes</a></li>
     <li><a href="#illustrations" onclick="closeMenu()">Illustrations</a></li>
     <li><a href="#documentaire" onclick="closeMenu()">Documentaire</a></li>
     <li><a href="#presse" onclick="closeMenu()">Presse</a></li>
-    <li><a href="#newsletter" onclick="closeMenu()">Contact</a></li>
+    <li><a href="#newsletter" onclick="closeMenu()">Newsletter</a></li>
   </ul>
 </nav>
 
@@ -1378,7 +1378,7 @@
     <!-- Photo ronde gauche — déborde de la cartouche -->
 <div style="flex-shrink:0;width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,0,0,0.1);margin-top:-45px;margin-bottom:-45px;">
   <img src="ARMELLE DE THE-4195.jpg"
-       style="width:130%;height:130%;object-fit:cover;object-position:55% 35%;margin-left:-15%;margin-top:0%;"
+       style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"
        alt="Armelle de Thé">
 </div>
 
@@ -1389,7 +1389,7 @@
         <span style="font-style:normal;font-weight:400;font-size:0.95rem;">Armelle de Thé</span>
       </p>
       <div style="display:flex;justify-content:flex-end;">
-        <a href="/cdn-cgi/l/email-protection#20434f4e544143546041524d454c4c4544454c415448450e4652" style="display:inline-block;padding:0.35rem 1.5rem;border:1.5px solid #3a3028;color:#3a3028;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#3a3028';this.style.color='#F0EBE0'" onmouseout="this.style.background='transparent';this.style.color='#3a3028'">
+        <a href="mailto:armelle@martineproductions.fr" style="display:inline-block;padding:0.35rem 1.5rem;border:1.5px solid #3a3028;color:#3a3028;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#3a3028';this.style.color='#F0EBE0'" onmouseout="this.style.background='transparent';this.style.color='#3a3028'">
           M'écrire
         </a>
       </div>
@@ -1780,7 +1780,7 @@
       <div class="presse-icone">✉</div>
       <div class="presse-titre-c">Demande d'interview</div>
       <p class="presse-desc-c">Plateau TV, podcast, presse écrite, radio. L'auteure est disponible dans toute la France.</p>
-      <a href="/cdn-cgi/l/email-protection#680b07061c090b1c28050d1a1e0d0104040d1d10090a09060c0706460e1a" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Contacter</a>
+      <a href="mailto:contact@merveilleuxabandon.fr" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Contacter</a>
     </div>
     <div class="presse-carte" onclick="window.location.href='visuels.html'">
       <div class="presse-icone">⊞</div>
@@ -1792,7 +1792,7 @@
       <div class="presse-icone">◻</div>
       <div class="presse-titre-c">Service de presse</div>
       <p class="presse-desc-c">Exemplaire physique ou numérique réservé aux journalistes et chroniqueurs littéraires.</p>
-      <a href="/cdn-cgi/l/email-protection#15663b727460617d7c70675570717c617c7a7b66387f7a6063707b76703b767d" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Demander</a>
+      <a href="mailto:s.gauthier@editions-jouvence.ch" class="presse-action" style="text-decoration:none;display:inline-block;text-align:center;">Demander</a>
     </div>
   </div>
 </section>
@@ -1801,7 +1801,7 @@
 <!-- NEWSLETTER -->
 <section id="newsletter">
   <div>
-    <div class="s-label" style="color:rgba(248,245,239,0.3);">Contact</div>
+    <div class="s-label" style="color:rgba(248,245,239,0.3);">Newsletter</div>
     <h2 class="nl-titre">Bonne<br><em>lecture</em></h2>
     <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">C'est avec un immense plaisir que je vous propose de découvrir <em>Merveilleux Abandon</em>, récit de vie qui raconte mon parcours singulier d'enfant abandonnée à la naissance et adoptée tardivement (sortie le 21 mai 2026).</p>
     <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">En parallèle, nous développons avec ma fille Zoé Le Gavrian et Abel Productions, un documentaire : <em>3 femmes, une route</em>. Réalisé par Cidjy Cerlini, il est le premier documentaire sur l'adoption qui met en scène trois générations : l'abandonnante, l'adoptée, et l'enfant de l'adoptée, pour la première fois réunies.</p>
@@ -1811,9 +1811,10 @@
 
   <div>
     <form class="nl-form" onsubmit="return false;">
+      <p class="nl-desc" style="font-size:0.85rem;line-height:1.8;margin-bottom:0.5rem;">Restez informé·e des événements, signatures, lectures et des coulisses du livre et du documentaire.</p>
       <input type="text" class="nl-input" placeholder="Votre prénom">
       <input type="email" class="nl-input" placeholder="Votre adresse email">
-      <button class="nl-btn">Je rejoins la liste</button>
+      <button class="nl-btn">Je m'inscris à la newsletter</button>
       <p class="nl-mention">Aucun spam. Désabonnement en un clic. Vos données ne sont jamais partagées.</p>
     </form>
   </div>
@@ -1835,7 +1836,7 @@
     <li><a href="#auteure">L'auteure</a></li>
     <li><a href="#documentaire">Documentaire</a></li>
     <li><a href="#presse">Presse</a></li>
-    <li><a href="#newsletter">Contact</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
   </ul>
 </footer>
 
