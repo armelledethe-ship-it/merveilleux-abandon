@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visuels HD — Merveilleux Abandon</title>
+<title>Visuels HD Presse — Merveilleux Abandon | Armelle de Thé, Zoé Le Gavrian</title>
+<meta name="description" content="Visuels haute définition libres de droits presse : photos d'Armelle de Thé, de Zoé Le Gavrian et illustrations du livre Merveilleux Abandon. Téléchargement gratuit pour les professionnels des médias.">
+<meta name="keywords" content="merveilleux abandon visuels presse, armelle de thé photo, zoé le gavrian illustratrice, dossier presse adoption, livre adoption illustrations">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://merveilleuxabandon.fr/visuels.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -76,7 +80,6 @@
   ═══════════════════ */
   .visuels-header {
     padding: 8rem 8rem 3rem;
-    max-width: 700px;
   }
 
   .visuels-breadcrumb {
@@ -173,6 +176,10 @@
     transition: transform 0.5s ease;
   }
 
+  .visuel-apercu img.photo-zoe {
+    object-position: center 15%;
+  }
+
   .visuel-carte:hover .visuel-apercu img {
     transform: scale(1.03);
   }
@@ -251,7 +258,6 @@
     line-height: 1.8;
     color: var(--gris-clair);
     font-weight: 300;
-    max-width: 600px;
     border-top: 1px solid var(--ligne);
   }
 
@@ -388,14 +394,19 @@
 
     <div class="visuel-carte anim-fade">
       <div class="visuel-apercu-pdf" style="background:var(--noir-doux);">
-        <svg width="60" height="72" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="58" height="70" rx="2" stroke="rgba(248,245,239,0.25)" stroke-width="1"/>
-          <line x1="12" y1="16" x2="48" y2="16" stroke="rgba(248,245,239,0.15)" stroke-width="1"/>
-          <line x1="12" y1="24" x2="48" y2="24" stroke="rgba(248,245,239,0.15)" stroke-width="1"/>
-          <line x1="12" y1="32" x2="36" y2="32" stroke="rgba(248,245,239,0.15)" stroke-width="1"/>
-          <text x="30" y="54" font-family="'Playfair Display', serif" font-size="14" fill="rgba(248,245,239,0.5)" text-anchor="middle" font-style="italic">Profil</text>
+        <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Document shape with folded corner -->
+          <path d="M4 0h40l16 16v60a4 4 0 01-4 4H4a4 4 0 01-4-4V4a4 4 0 014-4z" fill="rgba(248,245,239,0.08)" stroke="rgba(248,245,239,0.3)" stroke-width="1.5"/>
+          <path d="M44 0l16 16H48a4 4 0 01-4-4V0z" fill="rgba(248,245,239,0.15)"/>
+          <!-- Text lines -->
+          <line x1="10" y1="30" x2="50" y2="30" stroke="rgba(248,245,239,0.25)" stroke-width="1.5"/>
+          <line x1="10" y1="38" x2="50" y2="38" stroke="rgba(248,245,239,0.25)" stroke-width="1.5"/>
+          <line x1="10" y1="46" x2="38" y2="46" stroke="rgba(248,245,239,0.25)" stroke-width="1.5"/>
+          <!-- PDF label -->
+          <rect x="10" y="56" width="28" height="14" rx="2" fill="rgba(248,245,239,0.85)"/>
+          <text x="24" y="66.5" font-family="'DM Sans', sans-serif" font-size="8" font-weight="500" fill="var(--noir-doux)" text-anchor="middle" letter-spacing="0.1em">PDF</text>
         </svg>
-        <div class="pdf-label" style="color:rgba(248,245,239,0.4);">Biographie & portrait · PDF</div>
+        <div class="pdf-label" style="color:rgba(248,245,239,0.6);margin-top:0.5rem;">Biographie & portrait</div>
       </div>
       <div class="visuel-infos">
         <div class="visuel-nom">Profil Armelle de Thé</div>
@@ -412,7 +423,7 @@
   <div class="visuels-grille">
     <div class="visuel-carte anim-fade">
       <div class="visuel-apercu">
-        <img src="Zoe3533.jpg" alt="Photo Zoé Le Gavrian couleur" loading="lazy">
+        <img src="Zoe3533.jpg" alt="Photo Zoé Le Gavrian couleur" class="photo-zoe" loading="lazy">
       </div>
       <div class="visuel-infos">
         <div class="visuel-nom">Photo Zoé (couleur)</div>
@@ -423,7 +434,7 @@
 
     <div class="visuel-carte anim-fade">
       <div class="visuel-apercu">
-        <img src="Zoe3533 N&B.jpg" alt="Photo Zoé Le Gavrian noir et blanc" loading="lazy">
+        <img src="Zoe3533 N&B.jpg" alt="Photo Zoé Le Gavrian noir et blanc" class="photo-zoe" loading="lazy">
       </div>
       <div class="visuel-infos">
         <div class="visuel-nom">Photo Zoé (N&B)</div>
@@ -475,7 +486,7 @@
 
 <!-- MENTION LÉGALE -->
 <div class="visuels-mention">
-  Tous les visuels sont libres de droits pour un usage presse et média uniquement. Merci de créditer « Merveilleux Abandon — Armelle de Thé » et « Illustrations : Zoé Le Gavrian » le cas échéant.
+  Tous les visuels sont libres de droits pour un usage presse et média uniquement. Toute utilisation doit obligatoirement mentionner « Merveilleux Abandon — Armelle de Thé » et « Illustrations : Zoé Le Gavrian ».
 </div>
 
 <!-- FOOTER -->
