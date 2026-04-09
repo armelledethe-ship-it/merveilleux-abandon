@@ -1812,8 +1812,11 @@
   <div>
     <form class="nl-form" id="brevo-newsletter-form">
       <p class="nl-desc" style="font-size:0.85rem;line-height:1.8;margin-bottom:0.5rem;">Restez informé·e des événements, signatures, lectures et des coulisses du livre et du documentaire.</p>
-      <input type="text" class="nl-input" id="nl-prenom" placeholder="Votre prénom" required>
-      <input type="email" class="nl-input" id="nl-email" placeholder="Votre adresse email" required>
+      <div style="display:flex;gap:0.8rem;">
+        <input type="text" class="nl-input" id="nl-prenom" name="PRENOM" placeholder="Votre prénom" required style="flex:1;">
+        <input type="text" class="nl-input" id="nl-nom" name="NOM" placeholder="Votre nom" required style="flex:1;">
+      </div>
+      <input type="email" class="nl-input" id="nl-email" name="EMAIL" placeholder="Votre adresse email" required>
       <button type="submit" class="nl-btn" id="nl-submit-btn">Je m'inscris à la newsletter</button>
       <p class="nl-mention">Aucun spam. Désabonnement en un clic. Vos données ne sont jamais partagées.</p>
       <p id="nl-message" style="display:none;margin-top:1rem;font-size:0.85rem;line-height:1.6;"></p>
@@ -1855,52 +1858,39 @@
       e.preventDefault();
 
       var prenom = document.getElementById('nl-prenom').value.trim();
+      var nom = document.getElementById('nl-nom').value.trim();
       var email = document.getElementById('nl-email').value.trim();
       var btn = document.getElementById('nl-submit-btn');
       var msg = document.getElementById('nl-message');
 
-      if (!prenom || !email) return;
+      if (!prenom || !nom || !email) return;
 
       btn.disabled = true;
       btn.textContent = 'Inscription en cours…';
       btn.style.opacity = '0.6';
 
-      fetch('https://api.brevo.com/v3/contacts', {
+      // Construire les données du formulaire Brevo
+      var formData = new FormData();
+      formData.append('PRENOM', prenom);
+      formData.append('NOM', nom);
+      formData.append('EMAIL', email);
+      formData.append('locale', 'fr');
+      formData.append('html_type', 'simple');
+
+      fetch('https://5a2988f1.sibforms.com/serve/MUIFAEtdg7HAYpHBubES44O6JVy6EpMBNEFAIVJ1UCdm4PGBZTATxk4tiz1p9cnx1ngXtWBo5V_us1fasTP5ZQEFG0ywB1ZCJp28sq2DI1Ga8CeMZMc39i5MwRr_QGrXafZ9WCdO0agkanJjatHwS7ZxBSf60C8DBylLK9eTC7dZTdaAEdy_o1o9PhvRpnBFdUu8aE3py2tnnSs6VQ==', {
         method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'api-key': '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'
-        },
-        body: JSON.stringify({
-          email: email,
-          attributes: { PRENOM: prenom },
-          listIds: [2],
-          updateEnabled: true
-        })
+        body: formData
       })
       .then(function(response) {
-        if (response.ok || response.status === 204) {
-          msg.style.display = 'block';
-          msg.style.color = 'rgba(248,245,239,0.8)';
-          msg.textContent = '✓ Merci ' + prenom + ' ! Votre inscription est confirmée.';
-          document.getElementById('nl-prenom').value = '';
-          document.getElementById('nl-email').value = '';
-          btn.textContent = 'Inscrit·e ✓';
-          btn.style.opacity = '1';
-        } else {
-          return response.json().then(function(data) {
-            if (data.code === 'duplicate_parameter') {
-              msg.style.display = 'block';
-              msg.style.color = 'rgba(248,245,239,0.7)';
-              msg.textContent = 'Vous êtes déjà inscrit·e ! Merci de votre fidélité.';
-              btn.textContent = 'Déjà inscrit·e';
-              btn.style.opacity = '1';
-            } else {
-              throw new Error(data.message || 'Erreur inconnue');
-            }
-          });
-        }
+        // Brevo sibforms renvoie une page HTML de confirmation
+        msg.style.display = 'block';
+        msg.style.color = 'rgba(248,245,239,0.8)';
+        msg.textContent = '✓ Merci ' + prenom + ' ! Votre inscription est confirmée.';
+        document.getElementById('nl-prenom').value = '';
+        document.getElementById('nl-nom').value = '';
+        document.getElementById('nl-email').value = '';
+        btn.textContent = 'Inscrit·e ✓';
+        btn.style.opacity = '1';
       })
       .catch(function(error) {
         msg.style.display = 'block';
