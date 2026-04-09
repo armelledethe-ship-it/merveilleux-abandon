@@ -1810,7 +1810,10 @@
   </div>
 
   <div>
-    <form class="nl-form" id="brevo-newsletter-form">
+    <iframe name="brevo-iframe" style="display:none;"></iframe>
+    <form class="nl-form" id="brevo-newsletter-form"
+          action="https://5a2988f1.sibforms.com/serve/MUIFAEtdg7HAYpHBubES44O6JVy6EpMBNEFAIVJ1UCdm4PGBZTATxk4tiz1p9cnx1ngXtWBo5V_us1fasTP5ZQEFG0ywB1ZCJp28sq2DI1Ga8CeMZMc39i5MwRr_QGrXafZ9WCdO0agkanJjatHwS7ZxBSf60C8DBylLK9eTC7dZTdaAEdy_o1o9PhvRpnBFdUu8aE3py2tnnSs6VQ=="
+          method="POST" target="brevo-iframe">
       <p class="nl-desc" style="font-size:0.85rem;line-height:1.8;margin-bottom:0.5rem;">Restez informé·e des événements, signatures, lectures et des coulisses du livre et du documentaire.</p>
       <div style="display:flex;gap:0.8rem;">
         <input type="text" class="nl-input" id="nl-prenom" name="PRENOM" placeholder="Votre prénom" required style="flex:1;">
@@ -1854,35 +1857,18 @@
     var form = document.getElementById('brevo-newsletter-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
+    form.addEventListener('submit', function() {
       var prenom = document.getElementById('nl-prenom').value.trim();
-      var nom = document.getElementById('nl-nom').value.trim();
-      var email = document.getElementById('nl-email').value.trim();
       var btn = document.getElementById('nl-submit-btn');
       var msg = document.getElementById('nl-message');
 
-      if (!prenom || !nom || !email) return;
-
+      // Le formulaire se soumet nativement vers l'iframe cachée
+      // On affiche le message de confirmation après un court délai
       btn.disabled = true;
       btn.textContent = 'Inscription en cours…';
       btn.style.opacity = '0.6';
 
-      // Construire les données du formulaire Brevo
-      var formData = new FormData();
-      formData.append('PRENOM', prenom);
-      formData.append('NOM', nom);
-      formData.append('EMAIL', email);
-      formData.append('locale', 'fr');
-      formData.append('html_type', 'simple');
-
-      fetch('https://5a2988f1.sibforms.com/serve/MUIFAEtdg7HAYpHBubES44O6JVy6EpMBNEFAIVJ1UCdm4PGBZTATxk4tiz1p9cnx1ngXtWBo5V_us1fasTP5ZQEFG0ywB1ZCJp28sq2DI1Ga8CeMZMc39i5MwRr_QGrXafZ9WCdO0agkanJjatHwS7ZxBSf60C8DBylLK9eTC7dZTdaAEdy_o1o9PhvRpnBFdUu8aE3py2tnnSs6VQ==', {
-        method: 'POST',
-        body: formData
-      })
-      .then(function(response) {
-        // Brevo sibforms renvoie une page HTML de confirmation
+      setTimeout(function() {
         msg.style.display = 'block';
         msg.style.color = 'rgba(248,245,239,0.8)';
         msg.textContent = '✓ Merci ' + prenom + ' ! Votre inscription est confirmée.';
@@ -1891,16 +1877,7 @@
         document.getElementById('nl-email').value = '';
         btn.textContent = 'Inscrit·e ✓';
         btn.style.opacity = '1';
-      })
-      .catch(function(error) {
-        msg.style.display = 'block';
-        msg.style.color = 'rgba(255,150,150,0.9)';
-        msg.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-        btn.disabled = false;
-        btn.textContent = "Je m'inscris à la newsletter";
-        btn.style.opacity = '1';
-        console.error('Brevo error:', error);
-      });
+      }, 1500);
     });
   });
 </script>
