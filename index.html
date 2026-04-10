@@ -1419,10 +1419,21 @@
       flex-direction: column !important;
       gap: 0.8rem;
       align-items: flex-end !important;
+      width: 100% !important;
+    }
+    .hero-actions .btn-ligne,
+    .hero-actions .btn-blanc {
+      width: auto !important;
+    }
+    /* Forcer le bloc titre+boutons en colonne sur mobile */
+    .hero-gauche > div[style*="justify-content:space-between"] {
+      flex-direction: column !important;
+      align-items: flex-start !important;
     }
     /* M'écrire et tous les conteneurs de boutons alignés à droite */
     div[style*="justify-content:flex-end"] {
       justify-content: flex-end !important;
+      margin-top: 0.5rem !important;
     }
     .doc-texte .btn-blanc {
       float: right !important;
@@ -1524,18 +1535,12 @@
     .illu-num { font-size: 0.5rem !important; }
     .illu-tech { font-size: 0.55rem !important; }
 
-    /* Photo Zoé en rond sur mobile (180px) + espaces réduits */
-    .illu-entete > div:last-child {
-      width: 180px !important;
-      height: 180px !important;
-      border-radius: 50% !important;
-      margin: 0 auto !important;
-      max-width: none !important;
-    }
-    .illu-entete > div:last-child img {
-      aspect-ratio: auto !important;
-    }
+    /* Photo Zoé — mobile: afficher photo inline, masquer photo colonne */
+    .zoe-photo-mobile { display: block !important; }
+    .illu-entete > div:last-child { display: none !important; }
     .illu-entete {
+      display: flex !important;
+      flex-direction: column !important;
       margin-bottom: 1rem !important;
       padding-bottom: 0.5rem !important;
       gap: 0.5rem !important;
@@ -1806,6 +1811,10 @@
         </div>
       </div>
       <p class="illu-intro-txt">Fille d'Armelle de Thé, elle a illustré <em>Merveilleux Abandon</em> au crayon à papier, donnant une forme visuelle à une histoire qu'elle connaît de l'intérieur.</p>
+
+      <div class="zoe-photo-mobile" style="display:none;overflow:hidden;width:180px;height:180px;border-radius:50%;margin:1rem auto;border:2px solid rgba(248,245,239,0.15);">
+        <img src="Zoe3533.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Zoé Le Gavrian">
+      </div>
 
       <p style="font-size:0.88rem;line-height:1.95;color:rgba(248,245,239,0.5);font-weight:300;margin-top:1.5rem;font-style:italic;">Cette collaboration n'est pas un détail — c'est un deuxième cœur narratif. Cette mise en abyme poétique et puissante est un témoignage sur la filiation, l'identité et la transmission. Réunir deux générations qui ne se croisent pas habituellement sur la quête d'identité et qui pourtant, vont se découvrir mutuellement grâce à ce livre.</p>
     </div>
