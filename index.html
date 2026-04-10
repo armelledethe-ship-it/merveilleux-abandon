@@ -1382,19 +1382,35 @@
       gap: 1rem !important;
       text-align: center;
     }
+    /* Photo accueil plus grosse que Zoé (200px vs 180px) */
     section[style*="margin-top:90px"] > div > div:first-child {
-      width: 160px !important;
-      height: 160px !important;
+      width: 200px !important;
+      height: 200px !important;
       margin: 0 auto !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
+    }
+
+    /* Tous les boutons/liens unifiés style M'écrire + alignés à droite */
+    .btn-ligne, .btn-blanc {
+      padding: 0.35rem 1.5rem !important;
+      font-size: 0.68rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.25em !important;
+      border: 1.5px solid var(--noir) !important;
+      background: transparent !important;
+      color: var(--noir) !important;
+    }
+    .hero-actions {
+      flex-direction: column !important;
+      gap: 0.8rem;
+      align-items: flex-end !important;
     }
 
     /* Hero compact */
     .hero-gauche { padding: 2rem 1.5rem !important; }
     .hero-titre { font-size: 2.4rem !important; }
     .hero-titre-italic { font-size: 2.4rem !important; }
-    .hero-actions { flex-direction: column !important; gap: 0.8rem; align-items: flex-end !important; }
 
     /* Titres sections = même taille que hero */
     .s-titre { font-size: 2.4rem !important; }
@@ -1414,7 +1430,7 @@
     /* Illustrations grille pleine largeur */
     .illu-grille { max-width: 100% !important; }
 
-    /* Photo Zoé en rond sur mobile */
+    /* Photo Zoé en rond sur mobile (180px) */
     .illu-entete > div:last-child {
       width: 180px !important;
       height: 180px !important;
@@ -1426,7 +1442,7 @@
       aspect-ratio: auto !important;
     }
 
-    /* Auteure : texte avant photo */
+    /* Auteure : texte avant photo + photo centrée */
     #auteure {
       display: flex !important;
       flex-direction: column !important;
@@ -1434,9 +1450,16 @@
       gap: 2rem !important;
     }
     #auteure > .bio-contenu { order: 1; }
-    #auteure > .auteure-sticky { order: 2; position: static !important; }
+    #auteure > .auteure-sticky {
+      order: 2;
+      position: static !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
 
-    /* Documentaire : texte avant vidéo */
+    /* Documentaire : texte avant vidéo + bouton à droite */
     #documentaire {
       display: flex !important;
       flex-direction: column !important;
@@ -2124,6 +2147,12 @@
       }
     });
   });
+
+  // Force first theme card open on mobile
+  if (window.innerWidth <= 768) {
+    var firstTheme = document.querySelector('.theme-carte');
+    if (firstTheme) firstTheme.classList.add('active');
+  }
 
   // Hamburger menu
   function toggleMenu() {
