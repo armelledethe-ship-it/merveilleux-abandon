@@ -1208,52 +1208,82 @@
       text-decoration: none;
     }
 
+    /* Bandeau accueil - passage en colonne */
+    #bandeau-accueil-section {
+      padding: 0.5rem 1.5rem !important;
+      margin-top: 56px !important;
+    }
+    #bandeau-accueil-section > div {
+      flex-direction: column !important;
+      padding: 1.5rem !important;
+      gap: 1rem !important;
+      text-align: center;
+    }
+    #bandeau-accueil-section > div > div:first-child {
+      width: 140px !important;
+      height: 140px !important;
+      margin: 0 auto !important;
+    }
+
     /* Hero */
-    .hero-gauche { padding: 3rem 1.5rem; }
-    .hero-titre { font-size: 3.2rem; }
-    .hero-titre-italic { font-size: 3.2rem; }
-    .hero-sous-titre { font-size: 0.95rem; }
+    .hero-gauche { padding: 2rem 1.5rem; }
+    .hero-titre { font-size: 2.4rem; }
+    .hero-titre-italic { font-size: 2.4rem; }
+    .hero-sous-titre { font-size: 0.9rem; }
     .hero-actions { flex-direction: column; gap: 0.8rem; }
     .btn-blanc, .btn-ligne { text-align: center; }
 
     /* Pitch bande */
-    .pitch-bande { flex-direction: column; padding: 2rem 1.5rem; gap: 1rem; }
+    .pitch-bande { flex-direction: column; padding: 1.5rem !important; gap: 0.5rem; }
     .pitch-chiffre { font-size: 2rem; }
-    .pitch-texte { padding-left: 0; border-left: none; border-top: 1px solid rgba(248,245,239,0.1); padding-top: 1rem; font-size: 1rem; }
+    .pitch-texte { padding-left: 0; border-left: none; border-top: 1px solid rgba(248,245,239,0.1); padding-top: 1rem; font-size: 0.85rem !important; white-space: normal !important; }
 
     /* Sections communes */
-    #livre { padding: 3rem 1.5rem; gap: 2.5rem; }
+    #livre { padding: 2rem 1.5rem; gap: 2rem; }
     .livre-gauche, .livre-droite { padding: 0; }
     .livre-infos { grid-template-columns: 1fr 1fr; }
 
-    /* Thèmes */
-    #themes { padding: 3rem 1.5rem; }
-    .themes-grille { grid-template-columns: 1fr; }
-    .theme-carte { padding: 1.8rem 1.5rem; }
+    /* Thèmes — compact mobile */
+    #themes { padding: 2rem 1.5rem; }
+    .themes-entete { margin-bottom: 1.5rem !important; }
+    .themes-intro { font-size: 0.82rem; text-align: left !important; }
+    .themes-grille { grid-template-columns: 1fr; gap: 0; }
+    .theme-carte { padding: 0.8rem 1rem !important; border-right: none; }
+    .theme-num { margin-bottom: 0.2rem !important; font-size: 0.5rem; }
+    .theme-titre-c { font-size: 0.95rem; }
+    .themes-categorie { margin-bottom: 1rem !important; }
+    .themes-cat-titre { padding-bottom: 0.5rem; margin-bottom: 0 !important; }
 
     /* Illustrations */
-    #illustrations { padding: 3rem 1.5rem; }
+    #illustrations { padding: 2rem 1.5rem; }
     .illu-entete {
       grid-template-columns: 1fr !important;
-      gap: 2rem;
+      gap: 1.5rem !important;
+      margin-bottom: 2rem !important;
+      padding-bottom: 2rem !important;
     }
-    .illu-grille { grid-template-columns: 1fr; gap: 1rem; }
+    .illu-grille { grid-template-columns: 1fr; gap: 1rem; max-width: 100% !important; }
 
     /* Auteure */
-    #auteure { padding: 3rem 1.5rem; gap: 2.5rem; }
+    #auteure { padding: 2rem 1.5rem; gap: 2rem; grid-template-columns: 1fr !important; }
     .auteure-sticky { position: static; }
-    .portrait-encadre { max-height: 400px; }
+    .portrait-encadre { max-height: 350px; }
 
     /* Documentaire */
-    #documentaire { padding: 3rem 1.5rem; gap: 2.5rem; }
+    #documentaire { padding: 2rem 1.5rem !important; gap: 2rem; grid-template-columns: 1fr !important; }
+
+    /* Cartouche noire documentaire */
+    .cartouche-doc-mobile {
+      padding: 2rem 1.5rem !important;
+    }
 
     /* Presse */
-    #presse { padding: 3rem 1.5rem; }
+    #presse { padding: 2rem 1.5rem; }
     .presse-grille { grid-template-columns: 1fr; }
-    .presse-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+    .presse-intro { gap: 0.5rem !important; margin-bottom: 1.5rem !important; }
 
     /* Newsletter */
-    #newsletter { padding: 3rem 1.5rem; gap: 3rem; }
+    #newsletter { padding: 2rem 1.5rem; gap: 2rem; grid-template-columns: 1fr !important; }
 
     /* Footer */
     footer {
@@ -1269,7 +1299,13 @@
     }
 
     /* Titres */
-    .s-titre { font-size: 1.8rem; }
+    .s-titre { font-size: 1.6rem; }
+
+    /* Bloc texte pleine largeur auteure */
+    .bloc-texte-pleine-largeur {
+      padding: 0 1.5rem 1.5rem 1.5rem !important;
+      margin-top: -1.5rem !important;
+    }
   }
 
   /* ═══ TRÈS PETIT MOBILE (max 480px) ═══ */
@@ -1434,7 +1470,7 @@
 </nav>
 
 <!-- BANDEAU ACCUEIL -->
-<section style="background:transparent;padding:1rem 4rem;margin-top:60px;">
+<section id="bandeau-accueil-section" style="background:transparent;padding:1rem 4rem;margin-top:60px;">
   <div style="max-width:1100px;margin:0 auto;background:#F0EBE0;border-radius:4px;padding:0.6rem 2rem;display:flex;align-items:center;gap:2rem;">
 
     <!-- Photo ronde gauche — déborde de la cartouche -->
@@ -1805,7 +1841,7 @@
   </div>
 </section>
 
-<div style="background:var(--ivoire);padding:0 8rem 2rem 8rem;margin-top:-3rem;">
+<div class="bloc-texte-pleine-largeur" style="background:var(--ivoire);padding:0 8rem 2rem 8rem;margin-top:-3rem;">
   <p style="font-size:0.92rem;line-height:2;color:var(--gris-fonce);font-weight:300;text-align:left;">Tout en menant une carrière dans l'audiovisuel — elle devient mère de trois enfants. C'est à la naissance de son troisième enfant, Hector, qu'Armelle de Thé ressent le besoin de comprendre son histoire. Pendant des années, elle mène ce travail en silence. C'est pendant le confinement de 2020 qu'elle commence à écrire <em>Merveilleux Abandon</em>.</p>
 </div>
 <!-- DOCUMENTAIRE -->
@@ -1834,7 +1870,7 @@
   </div>
 </section>
 
-<div style="background:var(--noir);padding:3rem 8rem;margin-top:0;">
+<div class="cartouche-doc-mobile" style="background:var(--noir);padding:3rem 8rem;margin-top:0;">
   <p style="font-family:'Playfair Display',serif;font-size:1rem;line-height:2;color:rgba(248,245,239,0.85);font-weight:300;text-align:center;font-style:italic;">Une aventure singulière au service d'un besoin universel : connaître ses terres d'origines et se réconcilier avec son passé.<br><em>3 femmes - Une route</em>, met en scène : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies. Une lignée de trois générations unies par l'abandon !</p>
 </div>
 
