@@ -1367,6 +1367,117 @@
     margin-bottom: 1px;
   }
 
+  /* ═══════════════════
+     AMÉLIORATIONS MOBILE
+  ═══════════════════ */
+  @media (max-width: 768px) {
+    /* Bandeau accueil en colonne */
+    section[style*="margin-top:90px"] {
+      padding: 0.5rem 1.5rem !important;
+      margin-top: 56px !important;
+    }
+    section[style*="margin-top:90px"] > div {
+      flex-direction: column !important;
+      padding: 1.5rem !important;
+      gap: 1rem !important;
+      text-align: center;
+    }
+    section[style*="margin-top:90px"] > div > div:first-child {
+      width: 160px !important;
+      height: 160px !important;
+      margin: 0 auto !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Hero compact */
+    .hero-gauche { padding: 2rem 1.5rem !important; }
+    .hero-titre { font-size: 2.4rem !important; }
+    .hero-titre-italic { font-size: 2.4rem !important; }
+    .hero-actions { flex-direction: column !important; gap: 0.8rem; align-items: flex-end !important; }
+
+    /* Titres sections = même taille que hero */
+    .s-titre { font-size: 2.4rem !important; }
+
+    /* Pitch bande wrap */
+    .pitch-bande { padding: 1.5rem !important; }
+    .pitch-texte { white-space: normal !important; font-size: 0.85rem !important; }
+
+    /* Thèmes compacts */
+    .themes-entete { margin-bottom: 1.5rem !important; }
+    .themes-intro { text-align: left !important; }
+    .theme-carte { padding: 0.8rem 1rem !important; }
+    .theme-num { margin-bottom: 0.3rem !important; }
+    .themes-categorie { margin-bottom: 1rem !important; }
+    .themes-cat-titre { padding-bottom: 0.5rem !important; }
+
+    /* Illustrations grille pleine largeur */
+    .illu-grille { max-width: 100% !important; }
+
+    /* Photo Zoé en rond sur mobile */
+    .illu-entete > div:last-child {
+      width: 180px !important;
+      height: 180px !important;
+      border-radius: 50% !important;
+      margin: 0 auto !important;
+      max-width: none !important;
+    }
+    .illu-entete > div:last-child img {
+      aspect-ratio: auto !important;
+    }
+
+    /* Auteure : texte avant photo */
+    #auteure {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 2rem 1.5rem !important;
+      gap: 2rem !important;
+    }
+    #auteure > .bio-contenu { order: 1; }
+    #auteure > .auteure-sticky { order: 2; position: static !important; }
+
+    /* Documentaire : texte avant vidéo */
+    #documentaire {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 2rem 1.5rem !important;
+      gap: 2rem !important;
+    }
+    #documentaire > .doc-texte { order: 1; }
+    #documentaire > div:first-child { order: 2; }
+
+    /* Cartouche noire documentaire */
+    div[style*="padding:3rem 8rem"] {
+      padding: 2rem 1.5rem !important;
+    }
+
+    /* Bloc texte pleine largeur auteure */
+    div[style*="padding:0 8rem 2rem 8rem"] {
+      padding: 0 1.5rem 1.5rem 1.5rem !important;
+      margin-top: -1.5rem !important;
+    }
+
+    /* Presse compact */
+    .presse-intro { gap: 0.5rem !important; margin-bottom: 1.5rem !important; }
+
+    /* Newsletter */
+    #newsletter { padding: 2rem 1.5rem !important; gap: 2rem !important; }
+
+    /* Theme cards tap toggle */
+    .theme-carte.active {
+      background: var(--noir);
+      border-bottom-color: var(--noir);
+    }
+    .theme-carte.active .theme-num { color: rgba(248,245,239,0.25); }
+    .theme-carte.active .theme-titre-c { color: var(--ivoire); border-left-color: rgba(248,245,239,0.3); }
+    .theme-carte.active .theme-desc-c { max-height: 160px; opacity: 1; margin-top: 0.8rem; }
+  }
+
+  @media (max-width: 480px) {
+    .s-titre { font-size: 2.2rem !important; }
+    .hero-titre, .hero-titre-italic { font-size: 2.2rem !important; }
+  }
+
 </style>
   <script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -1998,4 +2109,31 @@
     });
     allLinks.forEach(l => {
       const active = l.getAttribute('href') === '#' + cur;
-      
+      l.style.color = active ? 'var(--noir)' : '';
+    });
+  });
+
+  // Theme cards tap toggle on mobile
+  document.querySelectorAll('.theme-carte').forEach(card => {
+    card.addEventListener('click', function() {
+      if (window.innerWidth <= 1024) {
+        document.querySelectorAll('.theme-carte.active').forEach(c => {
+          if (c !== this) c.classList.remove('active');
+        });
+        this.classList.toggle('active');
+      }
+    });
+  });
+
+  // Hamburger menu
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+</script>
+</body>
+</html>
