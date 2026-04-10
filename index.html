@@ -243,26 +243,6 @@
     color: var(--noir);
   }
 
-  /* Bouton unifié style M'écrire */
-  .btn-cta {
-    display: inline-block;
-    padding: 0.35rem 1.5rem;
-    border: 1.5px solid var(--noir);
-    color: var(--noir);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s;
-  }
-  .btn-cta:hover {
-    background: var(--noir);
-    color: var(--ivoire);
-  }
-
   .hero-droite {
     display: none;
   }
@@ -392,7 +372,7 @@
 
   .s-titre {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 300;
     line-height: 1.15;
     color: var(--noir);
@@ -1155,15 +1135,6 @@
     margin-top: 0.8rem;
   }
 
-  /* Active state for mobile tap */
-  .theme-carte.active {
-    background: var(--noir);
-    border-bottom-color: var(--noir);
-  }
-  .theme-carte.active .theme-num { color: rgba(248,245,239,0.25); }
-  .theme-carte.active .theme-titre-c { color: var(--ivoire); border-left-color: rgba(248,245,239,0.3); }
-  .theme-carte.active .theme-desc-c { max-height: 160px; opacity: 1; margin-top: 0.8rem; }
-
   /* ═══════════════════
      RESPONSIVE
   ═══════════════════ */
@@ -1237,82 +1208,52 @@
       text-decoration: none;
     }
 
-    /* Bandeau accueil - passage en colonne */
-    #bandeau-accueil-section {
-      padding: 0.5rem 1.5rem !important;
-      margin-top: 56px !important;
-    }
-    #bandeau-accueil-section > div {
-      flex-direction: column !important;
-      padding: 1.5rem !important;
-      gap: 1rem !important;
-      text-align: center;
-    }
-    #bandeau-accueil-section > div > div:first-child {
-      width: 140px !important;
-      height: 140px !important;
-      margin: 0 auto !important;
-    }
-
     /* Hero */
-    .hero-gauche { padding: 2rem 1.5rem; }
-    .hero-titre { font-size: 2.4rem; }
-    .hero-titre-italic { font-size: 2.4rem; }
-    .hero-sous-titre { font-size: 0.9rem; }
+    .hero-gauche { padding: 3rem 1.5rem; }
+    .hero-titre { font-size: 3.2rem; }
+    .hero-titre-italic { font-size: 3.2rem; }
+    .hero-sous-titre { font-size: 0.95rem; }
     .hero-actions { flex-direction: column; gap: 0.8rem; }
     .btn-blanc, .btn-ligne { text-align: center; }
 
     /* Pitch bande */
-    .pitch-bande { flex-direction: column; padding: 1.5rem !important; gap: 0.5rem; }
+    .pitch-bande { flex-direction: column; padding: 2rem 1.5rem; gap: 1rem; }
     .pitch-chiffre { font-size: 2rem; }
-    .pitch-texte { padding-left: 0; border-left: none; border-top: 1px solid rgba(248,245,239,0.1); padding-top: 1rem; font-size: 0.85rem !important; white-space: normal !important; }
+    .pitch-texte { padding-left: 0; border-left: none; border-top: 1px solid rgba(248,245,239,0.1); padding-top: 1rem; font-size: 1rem; }
 
     /* Sections communes */
-    #livre { padding: 2rem 1.5rem; gap: 2rem; }
+    #livre { padding: 3rem 1.5rem; gap: 2.5rem; }
     .livre-gauche, .livre-droite { padding: 0; }
     .livre-infos { grid-template-columns: 1fr 1fr; }
 
-    /* Thèmes — compact mobile */
-    #themes { padding: 2rem 1.5rem; }
-    .themes-entete { margin-bottom: 1.5rem !important; }
-    .themes-intro { font-size: 0.82rem; text-align: left !important; }
-    .themes-grille { grid-template-columns: 1fr; gap: 0; }
-    .theme-carte { padding: 0.8rem 1rem !important; border-right: none; }
-    .theme-num { margin-bottom: 0.2rem !important; font-size: 0.5rem; }
-    .theme-titre-c { font-size: 0.95rem; }
-    .themes-categorie { margin-bottom: 1rem !important; }
-    .themes-cat-titre { padding-bottom: 0.5rem; margin-bottom: 0 !important; }
+    /* Thèmes */
+    #themes { padding: 3rem 1.5rem; }
+    .themes-grille { grid-template-columns: 1fr; }
+    .theme-carte { padding: 1.8rem 1.5rem; }
 
     /* Illustrations */
-    #illustrations { padding: 2rem 1.5rem; }
+    #illustrations { padding: 3rem 1.5rem; }
     .illu-entete {
       grid-template-columns: 1fr !important;
-      gap: 1.5rem !important;
-      margin-bottom: 2rem !important;
-      padding-bottom: 2rem !important;
+      gap: 2rem;
     }
-    .illu-grille { grid-template-columns: 1fr; gap: 1rem; max-width: 100% !important; }
+    .illu-grille { grid-template-columns: 1fr; gap: 1rem; }
 
     /* Auteure */
-    #auteure { padding: 2rem 1.5rem; gap: 2rem; grid-template-columns: 1fr !important; }
+    #auteure { padding: 3rem 1.5rem; gap: 2.5rem; }
     .auteure-sticky { position: static; }
-    .portrait-encadre { max-height: 350px; }
+    .portrait-encadre { max-height: 400px; }
 
     /* Documentaire */
-    #documentaire { padding: 2rem 1.5rem !important; gap: 2rem; grid-template-columns: 1fr !important; }
-
-    /* Cartouche noire documentaire */
-    .cartouche-doc-mobile {
-      padding: 2rem 1.5rem !important;
-    }
+    #documentaire { padding: 3rem 1.5rem; gap: 2.5rem; }
 
     /* Presse */
-    #presse { padding: 2rem 1.5rem; }
+    #presse { padding: 3rem 1.5rem; }
     .presse-grille { grid-template-columns: 1fr; }
-    .presse-intro { gap: 0.5rem !important; margin-bottom: 1.5rem !important; }
+    .presse-intro { grid-template-columns: 1fr; gap: 1.5rem; }
 
     /* Newsletter */
-    #newsletter { padding: 2rem 1.5rem; gap: 2rem; grid-template-columns: 1fr !important; }
+    #newsletter { padding: 3rem 1.5rem; gap: 3rem; }
 
     /* Footer */
     footer {
@@ -1328,13 +1269,7 @@
     }
 
     /* Titres */
-    .s-titre { font-size: 1.6rem; }
-
-    /* Bloc texte pleine largeur auteure */
-    .bloc-texte-pleine-largeur {
-      padding: 0 1.5rem 1.5rem 1.5rem !important;
-      margin-top: -1.5rem !important;
-    }
+    .s-titre { font-size: 1.8rem; }
   }
 
   /* ═══ TRÈS PETIT MOBILE (max 480px) ═══ */
@@ -1499,23 +1434,23 @@
 </nav>
 
 <!-- BANDEAU ACCUEIL -->
-<section id="bandeau-accueil-section" style="background:transparent;padding:1rem 4rem;margin-top:60px;">
+<section style="background:transparent;padding:1rem 4rem;margin-top:90px;">
   <div style="max-width:1100px;margin:0 auto;background:#F0EBE0;border-radius:4px;padding:0.6rem 2rem;display:flex;align-items:center;gap:2rem;">
 
     <!-- Photo ronde gauche — déborde de la cartouche -->
-<div style="flex-shrink:0;width:300px;height:300px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,0,0,0.1);margin-top:-55px;margin-bottom:-55px;">
+<div style="flex-shrink:0;width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid rgba(0,0,0,0.1);margin-top:-45px;margin-bottom:-45px;">
   <img src="ARMELLE DE THE-4195.jpg"
        style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"
        alt="Armelle de Thé">
 </div>
 
     <!-- Texte -->
-    <div style="flex:1;">
-      <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;line-height:1.55;color:#3a3028;margin:0 0 0.5rem 0;">
-        <br>Il y a 4 ans, je commençais à écrire. Aujourd'hui, <strong><em>Merveilleux Abandon</em></strong> voit le jour. Publié aux <a href="https://editions-jouvence.com" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Editions Jouvence</a>, sa sortie est programmée le 21 mai 2026. <strong><em>3 femmes, 1 route</em></strong>, le documentaire qui lui fait écho, est en développement chez <a href="https://www.abelstudios.fr" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Abel Studios</a>. Deux œuvres, une seule histoire, que j'ai plaisir à partager avec vous. Bonne lecture.<br><br>
-        <span style="font-style:normal;font-weight:400;font-size:0.95rem;">Armelle de Thé</span>
+    <div style="flex:1;padding-top:1.2rem;">
+      <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;line-height:1.6;color:#3a3028;margin:0 0 0.3rem 0;">
+        Il y a 4 ans, je commençais à écrire. Aujourd'hui, <strong><em>Merveilleux Abandon</em></strong> voit le jour. Publié aux <a href="https://editions-jouvence.com" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Editions Jouvence</a>, sa sortie est programmée le 21 mai 2026. <strong><em>3 femmes, 1 route</em></strong>, le documentaire qui lui fait écho, est en développement chez <a href="https://www.abelstudios.fr" target="_blank" style="color:#3a3028;text-decoration:underline;text-underline-offset:3px;">Abel Studios</a>. Deux œuvres, une seule histoire, que j'ai plaisir à partager avec vous. Bonne lecture.
       </p>
-      <div style="display:flex;gap:1rem;margin-bottom:0.5rem;justify-content:center;">
+      <p style="font-style:normal;font-weight:400;font-size:0.95rem;font-family:'Playfair Display',serif;color:#3a3028;margin:0.8rem 0 0.3rem 0;">Armelle de Thé</p>
+      <div style="display:flex;gap:1rem;margin-bottom:0;">
         <a href="https://www.linkedin.com/in/armelle-de-thé-5a866b4/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid rgba(58,48,40,0.3);color:rgba(58,48,40,0.5);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#3a3028';this.style.color='#F0EBE0';this.style.borderColor='#3a3028'" onmouseout="this.style.background='transparent';this.style.color='rgba(58,48,40,0.5)';this.style.borderColor='rgba(58,48,40,0.3)'">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
@@ -1526,7 +1461,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-      <div style="display:flex;justify-content:flex-end;">
+      <div style="display:flex;justify-content:flex-end;margin-top:-0.6rem;">
         <a href="/cdn-cgi/l/email-protection#cfaebda2aaa3a3aa8fa2aebdbba6a1aabfbda0abbaacbba6a0a1bce1a9bd" style="display:inline-block;padding:0.35rem 1.5rem;border:1.5px solid #3a3028;color:#3a3028;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#3a3028';this.style.color='#F0EBE0'" onmouseout="this.style.background='transparent';this.style.color='#3a3028'">
           M'écrire
         </a>
@@ -1551,9 +1486,9 @@
         <h1 class="hero-titre">Merveilleux <em style="font-style:italic;color:rgba(13,13,13,0.35);">Abandon</em></h1>
         <p class="hero-sous-titre" style="margin-bottom:0;">Récit d'une expérience humaine et universelle</p>
       </div>
-      <div class="hero-actions" style="margin-top:0;flex-shrink:0;display:flex;justify-content:flex-end;gap:1rem;">
-        <a href="#newsletter" class="btn-cta">Pré-commander</a>
-        <a href="#newsletter" class="btn-cta">Être informée</a>
+      <div class="hero-actions" style="margin-top:0;flex-shrink:0;">
+        <a href="#newsletter" class="btn-ligne">Pré-commander</a>
+        <a href="#newsletter" class="btn-blanc">Être informée</a>
       </div>
     </div>
 
@@ -1611,9 +1546,9 @@
 
       <p style="font-size:0.88rem;line-height:1.95;color:rgba(248,245,239,0.5);font-weight:300;margin-top:1.5rem;font-style:italic;">Cette collaboration n'est pas un détail — c'est un deuxième cœur narratif. Cette mise en abyme poétique et puissante est un témoignage sur la filiation, l'identité et la transmission. Réunir deux générations qui ne se croisent pas habituellement sur la quête d'identité et qui pourtant, vont se découvrir mutuellement grâce à ce livre.</p>
     </div>
-    <div style="overflow:hidden;border:2px solid rgba(248,245,239,0.15);width:180px;height:180px;border-radius:50%;margin:0 auto;">
+    <div style="overflow:hidden;border:1px solid rgba(248,245,239,0.1);width:100%;">
       <img src="Zoe3533.jpg"
-           style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"
+           style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;aspect-ratio:3/4;"
            alt="Zoe Le Gavrian">
     </div>
   </div>
@@ -1657,8 +1592,8 @@
     </div>
   </div>
 
-  <div style="padding-top:0.2rem;border-top:1px solid rgba(248,245,239,0.08);text-align:center;max-width:700px;margin:0 auto;">
-    <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;font-weight:300;color:rgba(248,245,239,0.7);line-height:1.7;">
+  <div style="padding-top:0.2rem;border-top:1px solid rgba(248,245,239,0.08);text-align:center;max-width:800px;margin:0 auto;">
+    <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;font-weight:300;color:rgba(248,245,239,0.7);line-height:1.7;white-space:nowrap;">
       Zoé ne décore pas le texte — elle le traduit. Chaque illustration est une vérité visuelle que les mots seuls ne pouvaient pas dire.
     </p>
   </div>
@@ -1835,7 +1770,16 @@
 
 </section>
 <!-- AUTEURE -->
-<section id="auteure" style="background:var(--ivoire);padding:3rem 8rem;display:block;">
+<section id="auteure">
+  <div class="auteure-sticky">
+    <div class="portrait-encadre" style="overflow:hidden;">
+      <img src="armelle-enfant.jpg"
+        style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"
+        alt="Armelle de Thé enfant — signature par la main de son père">
+    </div>
+    <div class="portrait-nom" style="margin-top:1rem;">Armelle de Thé</div>
+    <div class="portrait-role">Lyon, vers 1972 · Annotation de la main de son père</div>
+  </div>
   <div class="bio-contenu">
     <div class="s-label">L'auteure</div>
     <h2 class="s-titre">Née de deux mères,<br>écrite par <em>une seule voix</em></h2>
@@ -1853,42 +1797,19 @@
 
     <p class="bio-p">Armelle de Thé est productrice audiovisuelle et fondatrice de Martine Productions. À travers divers formats : webséries, documentaires, podcasts, conférences, elle explore des sujets de société guidée par son parcours singulier. <em>Merveilleux Abandon</em> est son premier livre, né d'un besoin viscéral de vérité et de transmission.</p>
 
-    <div style="display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:start;margin-top:2rem;">
-      <div>
-        <div class="portrait-encadre" style="overflow:hidden;">
-          <img src="armelle-enfant.jpg"
-            style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"
-            alt="Armelle de Thé enfant — annotation de la main de son père">
-        </div>
-        <div class="portrait-nom" style="margin-top:1rem;">Armelle de Thé</div>
-        <div class="portrait-role">Lyon, vers 1972 · Annotation de la main de son père</div>
-      </div>
-      <div>
-        <div class="citation-encadree">
-          <p>« J'ai écrit ce livre pour tous ceux qui ont grandi avec un trou dans leur histoire. La blessure d'abandon est universelle. Ce que j'ai voulu montrer, c'est qu'elle peut devenir une force — à condition d'avoir le courage de la regarder en face. »</p>
-          <cite>Armelle de Thé</cite>
-        </div>
-      </div>
+    <div class="citation-encadree">
+      <p>« J'ai écrit ce livre pour tous ceux qui ont grandi avec un trou dans leur histoire. La blessure d'abandon est universelle. Ce que j'ai voulu montrer, c'est qu'elle peut devenir une force — à condition d'avoir le courage de la regarder en face. »</p>
+      <cite>Armelle de Thé</cite>
     </div>
+
   </div>
 </section>
 
-<div class="bloc-texte-pleine-largeur" style="background:var(--ivoire);padding:0 8rem 2rem 8rem;margin-top:-3rem;">
+<div style="background:var(--ivoire);padding:0 8rem 2rem 8rem;margin-top:-3rem;">
   <p style="font-size:0.92rem;line-height:2;color:var(--gris-fonce);font-weight:300;text-align:left;">Tout en menant une carrière dans l'audiovisuel — elle devient mère de trois enfants. C'est à la naissance de son troisième enfant, Hector, qu'Armelle de Thé ressent le besoin de comprendre son histoire. Pendant des années, elle mène ce travail en silence. C'est pendant le confinement de 2020 qu'elle commence à écrire <em>Merveilleux Abandon</em>.</p>
 </div>
 <!-- DOCUMENTAIRE -->
 <section id="documentaire">
-  <div class="doc-texte">
-    <div class="s-label">Le documentaire</div>
-    <h2 class="s-titre">Au-delà du livre,<br>un <em>témoignage filmé</em></h2>
-
-    <p class="doc-p">En parallèle du livre, Armelle de Thé prépare un documentaire : <strong>3 FEMMES - UNE ROUTE</strong> qui prolonge et approfondit le récit de <em>Merveilleux Abandon</em>. Un film intime, filmé au plus près de ce qu'est une filiation par adoption.</p>
-
-    <p class="doc-p">La caméra suit le chemin parcouru — de Lyon à la recherche des origines, de la blessure à la réunification — Zoé Le Gavrian, héritière de l'histoire de sa mère, est au centre du dispositif. Au fil de ce roadmovie, elle nous fait comprendre combien l'abandon est une blessure intergénérationnelle. Un documentaire qui met en lumière une lignée particulière, des femmes fortes.</p>
-
-    <div style="display:flex;justify-content:flex-end;"><a href="#newsletter" class="btn-cta">Être informée</a></div>
-  </div>
-
   <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#111;">
     <iframe
       src="https://player.vimeo.com/video/1175298785"
@@ -1899,10 +1820,22 @@
       title="Merveilleux Abandon — Documentaire">
     </iframe>
   </div>
+
+  <div class="doc-texte">
+    <div class="s-label">Le documentaire</div>
+    <h2 class="s-titre">Au-delà du livre,<br>un <em>témoignage filmé</em></h2>
+
+    <p class="doc-p">En parallèle du livre, Armelle de Thé prépare un documentaire : <strong>3 FEMMES - UNE ROUTE</strong> qui prolonge et approfondit le récit de <em>Merveilleux Abandon</em>. Un film intime, filmé au plus près de ce qu'est une filiation par adoption.</p>
+
+    <p class="doc-p">La caméra suit le chemin parcouru — de Lyon à la recherche des origines, de la blessure à la réunification — Zoé Le Gavrian, héritière de l'histoire de sa mère, est au centre du dispositif. Au fil de ce roadmovie, elle nous fait comprendre combien l'abandon est une blessure intergénérationnelle. Un documentaire qui met en lumière une lignée particulière, des femmes fortes.</p>
+
+
+    <a href="#newsletter" class="btn-blanc" style="background:var(--noir);color:var(--ivoire);">Être informée</a>
+  </div>
 </section>
 
-<div class="cartouche-doc-mobile" style="background:var(--noir);padding:3rem 8rem;margin-top:0;">
-  <p style="font-family:'Playfair Display',serif;font-size:1rem;line-height:2;color:rgba(248,245,239,0.85);font-weight:300;text-align:center;font-style:italic;">Une aventure singulière au service d'un besoin universel : connaître ses terres d'origines et se réconcilier avec son passé.<br><em>3 femmes - Une route</em>, met en scène : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies. Une lignée de trois générations unies par l'abandon !</p>
+<div style="background:var(--noir);padding:3rem 8rem;margin-top:0;">
+  <p style="font-family:'Playfair Display',serif;font-size:1rem;line-height:2;color:rgba(248,245,239,0.85);font-weight:300;text-align:center;font-style:italic;">Une aventure singulière au service d'un besoin universel : connaître ses terres d'origines et se réconcilier avec son passé.<br><em>3 femmes - Une route</em>, met en scène : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies. Une lignée unie par l'abandon !</p>
 </div>
 
 
@@ -2066,30 +1999,3 @@
     allLinks.forEach(l => {
       const active = l.getAttribute('href') === '#' + cur;
       
-      l.style.color = active ? 'var(--noir)' : '';
-    });
-  });
-
-  // Theme cards tap toggle on mobile
-  document.querySelectorAll('.theme-carte').forEach(card => {
-    card.addEventListener('click', function() {
-      if (window.innerWidth <= 1024) {
-        // Close other cards
-        document.querySelectorAll('.theme-carte.active').forEach(c => {
-          if (c !== this) c.classList.remove('active');
-        });
-        this.classList.toggle('active');
-      }
-    });
-  });
-
-  // Hamburger menu
-  function toggleMenu() {
-    document.getElementById('nav-links').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('nav-links').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-</script>
