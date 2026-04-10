@@ -601,7 +601,7 @@
     gap: 2rem;
     background: rgba(248,245,239,0.05);
     margin-bottom: 6rem;
-    max-width: 50%;
+    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -706,7 +706,7 @@
   ═══════════════════ */
   #documentaire {
     background: var(--ivoire-chaud);
-    padding: 3rem 8rem;
+    padding: 1.5rem 8rem 3rem 8rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
@@ -824,11 +824,11 @@
   }
 
   .presse-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    margin-bottom: 5rem;
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    align-items: flex-start;
   }
 
   .presse-sous-intro {
@@ -836,6 +836,8 @@
     line-height: 1.9;
     color: var(--gris-moyen);
     font-weight: 300;
+    text-align: left;
+    width: 100%;
   }
 
   .presse-grille {
@@ -1046,7 +1048,7 @@
 
   .themes-entete {
     max-width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
   }
 
   .themes-intro {
@@ -1066,7 +1068,7 @@
 
   .theme-carte {
     background: var(--blanc);
-    padding: 2.2rem 2rem;
+    padding: 1.2rem 1.5rem;
     position: relative;
     overflow: hidden;
     cursor: default;
@@ -1090,7 +1092,7 @@
     color: var(--gris-clair);
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     transition: color 0.3s;
   }
   .theme-carte:hover .theme-num {
@@ -1351,7 +1353,7 @@
   }
 
   .themes-categorie {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .themes-cat-titre {
@@ -1511,7 +1513,7 @@
 
 <!-- ILLUSTRATIONS -->
 <section id="illustrations">
-  <div class="illu-entete" style="display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(248,245,239,0.06);">
+  <div class="illu-entete" style="display:grid;grid-template-columns:1fr 250px;gap:4rem;align-items:start;margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(248,245,239,0.06);">
     <div>
       <div class="s-label">Les illustrations</div>
       <h2 class="s-titre illu-titre-anim" style="color:var(--ivoire);">L'art de <em>Zoé Le Gavrian</em></h2>
@@ -1522,7 +1524,7 @@
 
       <p style="font-size:0.88rem;line-height:1.95;color:rgba(248,245,239,0.5);font-weight:300;margin-top:1.5rem;font-style:italic;">Cette collaboration n'est pas un détail — c'est un deuxième cœur narratif. Cette mise en abyme poétique et puissante est un témoignage sur la filiation, l'identité et la transmission. Réunir deux générations qui ne se croisent pas habituellement sur la quête d'identité et qui pourtant, vont se découvrir mutuellement grâce à ce livre.</p>
     </div>
-    <div style="overflow:hidden;border:1px solid rgba(248,245,239,0.1);max-width:220px;margin:0 auto;">
+    <div style="overflow:hidden;border:1px solid rgba(248,245,239,0.1);width:100%;">
       <img src="Zoe3533.jpg"
            style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;aspect-ratio:3/4;"
            alt="Zoe Le Gavrian">
@@ -1531,7 +1533,7 @@
 
   <div class="illu-grille">
     <div class="illu-item">
-      <div class="illu-image-zone" style="background:#f0ede6;">
+      <div class="illu-image-zone" style="background:#FDFCFA;">
         <img src="nonne.jpg"
              style="width:100%;height:100%;object-fit:cover;display:block;"
              alt="La religieuse">
@@ -1543,7 +1545,7 @@
       </div>
     </div>
     <div class="illu-item">
-      <div class="illu-image-zone" style="background:#f0ede6;">
+      <div class="illu-image-zone" style="background:#FDFCFA;">
         <img src="oeil.jpg"
              style="width:100%;height:100%;object-fit:cover;display:block;"
              alt="L'œil qui pleure">
@@ -1555,7 +1557,7 @@
       </div>
     </div>
     <div class="illu-item">
-      <div class="illu-image-zone" style="background:#f0ede6;">
+      <div class="illu-image-zone" style="background:#FDFCFA;">
         <img src="solitude.jpg"
              style="width:100%;height:100%;object-fit:cover;display:block;"
              alt="Solitude">
@@ -1580,7 +1582,7 @@
 <section id="themes">
   <div class="themes-entete">
     <div class="s-label">Les thèmes</div>
-    <h2 class="s-titre">Une densité<br><em>thématique rare</em></h2>
+    <h2 class="s-titre">Une densité <em>thématique rare</em></h2>
     <p class="themes-intro"><em>Merveilleux Abandon</em> est l'un de ces livres rares qui touchent simultanément à presque tous les grands thèmes de l'existence humaine — la naissance et la mort, l'amour et la blessure, l'identité et la transformation, le corps et l'âme, l'individu et la société. C'est précisément cette densité thématique qui en fait un objet littéraire et humain d'une richesse exceptionnelle, et qui justifie qu'il puisse être lu, commenté et prescrit depuis des univers éditoriaux aussi différents que la psychologie, la spiritualité, la littérature, la sociologie ou le droit.</p>
   </div>
 
@@ -1754,24 +1756,25 @@
         alt="Armelle de Thé enfant — signature par la main de son père">
     </div>
     <div class="portrait-nom" style="margin-top:1rem;">Armelle de Thé</div>
-    <div class="portrait-role">Auteure · Lyon, vers 1972 · signature par la main de son père</div>
+    <div class="portrait-role">Lyon, vers 1972 · Annotation de la main de son père</div>
   </div>
   <div class="bio-contenu">
     <div class="s-label">L'auteure</div>
     <h2 class="s-titre">Née de deux mères,<br>écrite par <em>une seule voix</em></h2>
 
-    <p class="bio-p">Née le 27 juin 1967 sous le prénom de Martine, adoptée six mois plus tard par Jehan et Suzanne de Thé, Armelle de Thé a grandi dans une famille aristocratique sans jamais connaître ses origines.</p>
-
-    <p class="bio-p">Tout en menant une carrière dans l'audiovisuel — journaliste, réalisatrice et productrice — elle devient mère de trois enfants. C'est à la naissance de son troisième enfant, Hector, qu'Armelle ressent le besoin de comprendre son histoire.</p>
+    <p class="bio-p">Armelle de Thé est productrice audiovisuelle et fondatrice de Martine Productions. À travers divers formats : webséries, documentaires, podcasts, conférences, elle explore des sujets de société guidée par son parcours singulier. <em>Merveilleux Abandon</em> est son premier livre, né d'un besoin viscéral de vérité et de transmission.</p>
 
     <div class="citation-encadree">
       <p>« J'ai écrit ce livre pour tous ceux qui ont grandi avec un trou dans leur histoire. La blessure d'abandon est universelle. Ce que j'ai voulu montrer, c'est qu'elle peut devenir une force — à condition d'avoir le courage de la regarder en face. »</p>
       <cite>Armelle de Thé</cite>
     </div>
 
-    <p class="bio-p">Pendant plus de dix-huit ans, elle mène ce travail en silence. C'est pendant le confinement de 2020 qu'elle commence à écrire <em>Merveilleux Abandon</em> — et à réconcilier enfin Martine et Armelle en une seule femme, entière et libre.</p>
   </div>
 </section>
+
+<div style="background:var(--ivoire);padding:0 8rem 2rem 8rem;margin-top:-3rem;">
+  <p style="font-size:0.92rem;line-height:2;color:var(--gris-fonce);font-weight:300;text-align:left;">Tout en menant une carrière dans l'audiovisuel — elle devient mère de trois enfants. C'est à la naissance de son troisième enfant, Hector, qu'Armelle de Thé ressent le besoin de comprendre son histoire. Pendant des années, elle mène ce travail en silence. C'est pendant le confinement de 2020 qu'elle commence à écrire <em>Merveilleux Abandon</em>.</p>
+</div>
 <!-- DOCUMENTAIRE -->
 <section id="documentaire">
   <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#111;">
@@ -1789,34 +1792,18 @@
     <div class="s-label">Le documentaire</div>
     <h2 class="s-titre">Au-delà du livre,<br>un <em>témoignage filmé</em></h2>
 
-    <p class="doc-p">En parallèle du livre, Armelle de Thé prépare un documentaire qui prolonge et approfondit le récit de <em>Merveilleux Abandon</em>. Un film intime, filmé au plus près de ce qu'est une filiation par adoption.</p>
+    <p class="doc-p">En parallèle du livre, Armelle de Thé prépare un documentaire : <strong>3 FEMMES - UNE ROUTE</strong> qui prolonge et approfondit le récit de <em>Merveilleux Abandon</em>. Un film intime, filmé au plus près de ce qu'est une filiation par adoption.</p>
 
-    <p class="doc-p">La caméra suit le chemin parcouru — de Lyon à la recherche des origines, de la blessure à la réunification — avec les personnes qui ont compté dans cette histoire. Un documentaire qui met en lumière la lignée particulière d'Armelle de Thé.</p>
+    <p class="doc-p">La caméra suit le chemin parcouru — de Lyon à la recherche des origines, de la blessure à la réunification — Zoé Le Gavrian, héritière de l'histoire de sa mère, est au centre du dispositif. Au fil de ce roadmovie, elle nous fait comprendre combien l'abandon est une blessure intergénérationnelle. Un documentaire qui met en lumière une lignée particulière, des femmes fortes.</p>
 
-    <p class="doc-p">Le film met en scène trois générations : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies.</p>
-
-    <div class="doc-details">
-      <div class="doc-detail-ligne">
-        <span class="doc-detail-cle">Format</span>
-        <span class="doc-detail-val">Documentaire intimiste</span>
-      </div>
-      <div class="doc-detail-ligne">
-        <span class="doc-detail-cle">Thème</span>
-        <span class="doc-detail-val">Adoption, identité, réunification</span>
-      </div>
-      <div class="doc-detail-ligne">
-        <span class="doc-detail-cle">Protagoniste</span>
-        <span class="doc-detail-val">Armelle de Thé</span>
-      </div>
-      <div class="doc-detail-ligne">
-        <span class="doc-detail-cle">Statut</span>
-        <span class="doc-detail-val">En développement</span>
-      </div>
-    </div>
 
     <a href="#newsletter" class="btn-blanc" style="background:var(--noir);color:var(--ivoire);">Être informée</a>
   </div>
 </section>
+
+<div style="background:var(--noir);padding:3rem 8rem;margin-top:0;">
+  <p style="font-family:'Playfair Display',serif;font-size:1rem;line-height:2;color:rgba(248,245,239,0.85);font-weight:300;text-align:center;font-style:italic;">Une aventure singulière au service d'un besoin universel : connaître ses terres d'origines et se réconcilier avec son passé.<br><em>3 femmes - Une route</em>, met en scène : l'abandonnante, l'adoptée et l'enfant de l'adoptée, pour la première fois réunies. Une lignée de trois générations unies par l'abandon !</p>
+</div>
 
 
 <!-- PRESSE -->
@@ -1824,7 +1811,7 @@
   <div class="presse-intro">
     <div>
       <div class="s-label">Presse & médias</div>
-      <h2 class="s-titre">Pour les <em>journalistes</em><br>et prescripteurs</h2>
+      <h2 class="s-titre">Pour les <em>journalistes</em> et prescripteurs</h2>
     </div>
     <p class="presse-sous-intro">Armelle de Thé et Zoé Le Gavrian sont disponibles pour des interviews, signatures, lectures publiques et interventions... Tous les éléments nécessaires aux professionnels des médias sont disponibles ci-dessous.</p>
   </div>
@@ -1862,10 +1849,8 @@
 <section id="newsletter">
   <div>
     <div class="s-label" style="color:rgba(248,245,239,0.3);">Newsletter</div>
-    <h2 class="nl-titre">Bonne<br><em>lecture</em></h2>
-    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">C'est avec un immense plaisir que je vous propose de découvrir <em>Merveilleux Abandon</em>, récit de vie qui raconte mon parcours singulier d'enfant abandonnée à la naissance et adoptée tardivement (sortie le 21 mai 2026).</p>
-    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">En parallèle, nous développons avec ma fille Zoé Le Gavrian et Abel Productions, un documentaire : <em>3 femmes, une route</em>. Réalisé par Cidjy Cerlini, il est le premier documentaire sur l'adoption qui met en scène trois générations : l'abandonnante, l'adoptée, et l'enfant de l'adoptée, pour la première fois réunies.</p>
-    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;font-style:italic;">Par avance merci de l'attention que vous portez. Si vous voulez correspondre avec moi, vous pouvez le faire ci-dessous. Soyez assurés que je vous répondrai toujours.</p>
+    <h2 class="nl-titre">Rejoignez <em>l'aventure</em></h2>
+    <p class="nl-desc" style="font-size:0.92rem;line-height:1.95;">Inscrivez-vous pour recevoir en avant-première les coulisses du livre et du documentaire : extraits inédits, dates de signatures et rencontres, témoignages sur l'adoption et la quête des origines, et les étapes du tournage de <em>3 femmes, une route</em>. Une newsletter rare et sincère, à l'image du projet.</p>
     <p class="nl-desc" style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(248,245,239,0.8);margin-top:1rem;">Armelle de Thé</p>
   </div>
 
