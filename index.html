@@ -1372,23 +1372,37 @@
   ═══════════════════ */
   @media (max-width: 768px) {
     /* Bandeau accueil en colonne */
+    nav { padding: 0.6rem 1.5rem !important; }
     section[style*="margin-top:90px"] {
-      padding: 0.5rem 1.5rem !important;
-      margin-top: 56px !important;
+      padding: 0.1rem 1.5rem !important;
+      margin-top: 20px !important;
     }
     section[style*="margin-top:90px"] > div {
       flex-direction: column !important;
-      padding: 1.5rem !important;
-      gap: 1rem !important;
+      padding: 1rem !important;
+      gap: 0.5rem !important;
       text-align: center;
     }
-    /* Photo accueil plus grosse que Zoé (200px vs 180px) */
+    /* Photo accueil plus grosse que Zoé (300px vs 180px) */
     section[style*="margin-top:90px"] > div > div:first-child {
-      width: 200px !important;
-      height: 200px !important;
+      width: 300px !important;
+      height: 300px !important;
       margin: 0 auto !important;
       margin-top: 0 !important;
       margin-bottom: 0 !important;
+    }
+    /* Centrer icônes réseaux sous la photo, avant le texte */
+    section[style*="margin-top:90px"] > div > div:last-child {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    section[style*="margin-top:90px"] > div > div:last-child > div[style*="gap:1rem"] {
+      justify-content: center !important;
+      order: -2 !important;
+      margin-bottom: 0.9rem !important;
+    }
+    section[style*="margin-top:90px"] > div > div:last-child > p:first-of-type {
+      order: -1 !important;
     }
 
     /* Tous les boutons/liens unifiés style M'écrire + alignés à droite */
@@ -1406,31 +1420,111 @@
       gap: 0.8rem;
       align-items: flex-end !important;
     }
+    /* M'écrire et tous les conteneurs de boutons alignés à droite */
+    div[style*="justify-content:flex-end"] {
+      justify-content: flex-end !important;
+    }
+    .doc-texte .btn-blanc {
+      float: right !important;
+    }
 
     /* Hero compact */
-    .hero-gauche { padding: 2rem 1.5rem !important; }
-    .hero-titre { font-size: 2.4rem !important; }
-    .hero-titre-italic { font-size: 2.4rem !important; }
+    .hero-gauche { padding: 1rem 1.5rem !important; }
+    .hero-gauche > div { text-align: center !important; }
+    .hero-titre { font-size: 2.4rem !important; text-align: center !important; }
+    .hero-titre-italic { font-size: 2.4rem !important; text-align: center !important; }
+    .hero-sous-titre { text-align: center !important; margin-bottom: 1rem !important; }
+    .s-label { justify-content: flex-start !important; }
+    #hero { padding-bottom: 0 !important; }
+    .hero-gauche > div[style*="margin-bottom:2.5rem"] { margin-bottom: 0.5rem !important; }
+    div[style*="background:var(--noir-doux)"] { margin-top: 0 !important; }
 
-    /* Titres sections = même taille que hero */
-    .s-titre { font-size: 2.4rem !important; }
+    /* Titres sections = même taille que hero + alignés à gauche */
+    .s-titre { font-size: 2.4rem !important; text-align: left !important; }
 
-    /* Pitch bande wrap */
-    .pitch-bande { padding: 1.5rem !important; }
-    .pitch-texte { white-space: normal !important; font-size: 0.85rem !important; }
+    /* Pitch bande — masquer sur mobile pour supprimer l'espace blanc */
+    .pitch-bande { display: none !important; }
 
-    /* Thèmes compacts */
+    /* Synopsis cartouche noire — réduire padding */
+    div[style*="background:var(--noir-doux)"] {
+      padding: 1rem !important;
+    }
+
+    /* Citation Zoé — permettre retour à la ligne sur mobile */
+    #illustrations > div:last-of-type p {
+      white-space: normal !important;
+      font-size: 0.85rem !important;
+    }
+
+    /* Thèmes — Accordéon + Carrousel hybride */
     .themes-entete { margin-bottom: 1.5rem !important; }
     .themes-intro { text-align: left !important; }
-    .theme-carte { padding: 0.8rem 1rem !important; }
+    .themes-categorie { margin-bottom: 0 !important; overflow: visible !important; }
+    .themes-cat-titre {
+      padding: 1rem !important;
+      margin-bottom: 0 !important;
+      cursor: pointer;
+      position: relative;
+      background: var(--blanc);
+      border-bottom: 1px solid var(--ligne);
+    }
+    .themes-cat-titre::after {
+      content: '+' !important;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--gris-clair);
+    }
+    .themes-categorie.cat-open .themes-cat-titre::after {
+      content: '−' !important;
+    }
+    .themes-grille {
+      grid-template-columns: none !important;
+      display: flex !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      -webkit-overflow-scrolling: touch !important;
+      gap: 0.8rem !important;
+      padding: 0.8rem 0 !important;
+      scrollbar-width: none !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+      transition: max-height 0.4s ease !important;
+    }
+    .themes-grille::-webkit-scrollbar { display: none !important; }
+    .themes-categorie.cat-open .themes-grille {
+      max-height: 500px !important;
+      overflow-x: auto !important;
+    }
+    .theme-carte {
+      min-width: 240px !important;
+      max-width: 240px !important;
+      flex-shrink: 0 !important;
+      scroll-snap-align: start !important;
+      padding: 1rem !important;
+      border: 1px solid var(--ligne) !important;
+      border-right: 1px solid var(--ligne) !important;
+    }
     .theme-num { margin-bottom: 0.3rem !important; }
-    .themes-categorie { margin-bottom: 1rem !important; }
-    .themes-cat-titre { padding-bottom: 0.5rem !important; }
+    .theme-desc-c {
+      max-height: none !important;
+      overflow: visible !important;
+      opacity: 1 !important;
+      margin-top: 0.5rem !important;
+      font-size: 0.68rem !important;
+    }
+    #themes { padding: 1.5rem 1.5rem 1rem 1.5rem !important; }
 
-    /* Illustrations grille pleine largeur */
-    .illu-grille { max-width: 100% !important; }
+    /* Illustrations grille 3 colonnes compactes */
+    .illu-grille { max-width: 100% !important; grid-template-columns: repeat(3, 1fr) !important; gap: 0.5rem !important; }
+    .illu-info { padding: 0.8rem !important; }
+    .illu-nom { font-size: 0.8rem !important; }
+    .illu-num { font-size: 0.5rem !important; }
+    .illu-tech { font-size: 0.55rem !important; }
 
-    /* Photo Zoé en rond sur mobile (180px) */
+    /* Photo Zoé en rond sur mobile (180px) + espaces réduits */
     .illu-entete > div:last-child {
       width: 180px !important;
       height: 180px !important;
@@ -1441,13 +1535,21 @@
     .illu-entete > div:last-child img {
       aspect-ratio: auto !important;
     }
+    .illu-entete {
+      margin-bottom: 1rem !important;
+      padding-bottom: 0.5rem !important;
+      gap: 0.5rem !important;
+    }
+    .illu-grille { margin-bottom: 0.5rem !important; }
+    #illustrations { padding: 1rem 1.5rem !important; }
+    #illustrations > div:last-of-type { padding-top: 0 !important; margin-bottom: 0 !important; }
 
-    /* Auteure : texte avant photo + photo centrée */
+    /* Auteure : texte avant photo + photo centrée + compact */
     #auteure {
       display: flex !important;
       flex-direction: column !important;
-      padding: 2rem 1.5rem !important;
-      gap: 2rem !important;
+      padding: 1.5rem !important;
+      gap: 1rem !important;
     }
     #auteure > .bio-contenu { order: 1; }
     #auteure > .auteure-sticky {
@@ -1457,7 +1559,19 @@
       flex-direction: column !important;
       align-items: center !important;
       text-align: center !important;
+      width: 100% !important;
     }
+    #auteure > .auteure-sticky .portrait-encadre {
+      max-width: 250px !important;
+      width: 250px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .portrait-nom { text-align: center !important; margin-top: 0.3rem !important; }
+    .portrait-role { text-align: center !important; margin-bottom: 0.8rem !important; }
+    .bio-contenu .s-titre { margin-bottom: 1rem !important; }
+    .bio-p { margin-bottom: 0.8rem !important; }
+    .citation-encadree { margin: 1.5rem 0 !important; padding: 1.5rem !important; }
 
     /* Documentaire : texte avant vidéo + bouton à droite */
     #documentaire {
@@ -1480,11 +1594,26 @@
       margin-top: -1.5rem !important;
     }
 
-    /* Presse compact */
-    .presse-intro { gap: 0.5rem !important; margin-bottom: 1.5rem !important; }
+    /* Espaces homogènes au-dessus de chaque section */
+    #illustrations { padding: 1.5rem 1.5rem 1rem 1.5rem !important; }
+    #themes { padding: 1.5rem 1.5rem 1rem 1.5rem !important; }
+    #auteure { padding: 1.5rem !important; gap: 1rem !important; }
+    #documentaire { padding: 1.5rem !important; gap: 1.5rem !important; }
+    #presse { padding: 1.5rem !important; }
+    #newsletter { padding: 1.5rem !important; gap: 1.5rem !important; }
 
-    /* Newsletter */
-    #newsletter { padding: 2rem 1.5rem !important; gap: 2rem !important; }
+    /* Presse compact — grille 2x2 */
+    .presse-intro { gap: 0.5rem !important; margin-bottom: 1rem !important; }
+    .presse-grille {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1px !important;
+    }
+    .presse-carte {
+      padding: 1rem 0.8rem !important;
+    }
+    .presse-titre-c { font-size: 0.85rem !important; }
+    .presse-desc-c { font-size: 0.65rem !important; }
+    .presse-action { font-size: 0.55rem !important; }
 
     /* Theme cards tap toggle */
     .theme-carte.active {
@@ -1915,19 +2044,21 @@
     <div class="portrait-role">Lyon, vers 1972 · Annotation de la main de son père</div>
   </div>
   <div class="bio-contenu">
-    <div class="s-label">L'auteure</div>
-    <h2 class="s-titre">Née de deux mères,<br>écrite par <em>une seule voix</em></h2>
-    <div style="display:flex;gap:1.2rem;margin-bottom:1.5rem;">
-      <a href="https://www.linkedin.com/in/armelle-de-thé-5a866b4/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/armelledethe/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/armelle.dethe/?locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
+    <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.2rem;">
+      <div class="s-label" style="margin-bottom:0;">L'auteure</div>
+      <div style="display:flex;gap:0.8rem;">
+        <a href="https://www.linkedin.com/in/armelle-de-thé-5a866b4/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/armelledethe/" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/armelle.dethe/?locale=fr_FR" target="_blank" rel="noopener" aria-label="Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--ligne);color:var(--gris-clair);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--noir)';this.style.color='var(--ivoire)';this.style.borderColor='var(--noir)'" onmouseout="this.style.background='transparent';this.style.color='var(--gris-clair)';this.style.borderColor='var(--ligne)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
     </div>
+    <h2 class="s-titre">Née de deux mères,<br>écrite par <em>une seule voix</em></h2>
 
     <p class="bio-p">Armelle de Thé est productrice audiovisuelle et fondatrice de Martine Productions. À travers divers formats : webséries, documentaires, podcasts, conférences, elle explore des sujets de société guidée par son parcours singulier. <em>Merveilleux Abandon</em> est son premier livre, né d'un besoin viscéral de vérité et de transmission.</p>
 
@@ -2148,10 +2279,24 @@
     });
   });
 
-  // Force first theme card open on mobile
+  // Accordion toggle for theme categories on mobile
+  document.querySelectorAll('.themes-cat-titre').forEach(titre => {
+    titre.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        var cat = this.parentElement;
+        var wasOpen = cat.classList.contains('cat-open');
+        document.querySelectorAll('.themes-categorie.cat-open').forEach(c => {
+          c.classList.remove('cat-open');
+        });
+        if (!wasOpen) cat.classList.add('cat-open');
+      }
+    });
+  });
+
+  // Force first theme category open on mobile
   if (window.innerWidth <= 768) {
-    var firstTheme = document.querySelector('.theme-carte');
-    if (firstTheme) firstTheme.classList.add('active');
+    var firstCat = document.querySelector('.themes-categorie');
+    if (firstCat) firstCat.classList.add('cat-open');
   }
 
   // Hamburger menu
