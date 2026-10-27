@@ -198,3 +198,8 @@ h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--
 /* Paragraphe d'introduction aligné sur le titre */
 .is-layout-constrained > .ma-intro { max-width: 760px; margin-left: max(0px, calc((100% - 1240px) / 2)) !important; margin-right: auto !important; }
 .ma-carte-video video { object-fit: cover; }
+/* En-tête : tout sur une ligne */
+header .ma-signature-titre, header .wp-block-navigation-item__content, header .wp-block-button__link { white-space: nowrap; }
+header .wp-block-social-links { flex-wrap: nowrap; gap: 10px !important; margin: 0; }
+header .wp-block-social-links .wp-social-link svg { width: 20px; height: 20px; }
+@media (min-width: 1100px) { header .wp-block-button__link { padding: 12px 22px; } }
