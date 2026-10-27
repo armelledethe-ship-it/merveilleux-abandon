@@ -46,8 +46,8 @@ add_action( 'init', function () {
 
 /* « Lire aussi » : exclut l'article affiché, privilégie sa catégorie. */
 add_filter( 'query_loop_block_query_vars', function ( $query, $block ) {
-	$class = $block->parsed_block['attrs']['className'] ?? '';
-	if ( false === strpos( $class, 'ma-lire-aussi' ) || ! is_singular( 'post' ) ) {
+	/* Le bloc « Lire aussi » du modèle d'article porte le queryId 3. */
+	if ( 3 !== (int) ( $block->context['queryId'] ?? 0 ) || ! is_singular( 'post' ) ) {
 		return $query;
 	}
 	$current               = get_queried_object_id();
