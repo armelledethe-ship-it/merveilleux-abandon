@@ -191,3 +191,7 @@ h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--
 .ma-carte-video .ma-duree { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
 @media (max-width: 900px) { .ma-cartes-video { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .ma-cartes-video { grid-template-columns: 1fr; } }
+.ma-chapitres-rue { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.ma-chapitres-rue li { border-top: 1px solid var(--wp--preset--color--nuit); padding-top: 16px; font-size: 0.9375rem; line-height: 1.6; color: var(--wp--preset--color--ardoise); }
+.ma-chapitres-rue span { display: block; font-family: var(--wp--preset--font-family--titre); font-style: italic; font-size: 1.375rem; color: var(--wp--preset--color--nuit); margin-bottom: 6px; }
+@media (max-width: 700px) { .ma-chapitres-rue { grid-template-columns: 1fr; } }
