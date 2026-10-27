@@ -196,7 +196,7 @@ h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--
 .ma-chapitres-rue span { display: block; font-family: var(--wp--preset--font-family--titre); font-style: italic; font-size: 1.375rem; color: var(--wp--preset--color--nuit); margin-bottom: 6px; }
 @media (max-width: 700px) { .ma-chapitres-rue { grid-template-columns: 1fr; } }
 /* Paragraphe d'introduction aligné sur le titre */
-.is-layout-constrained > .ma-intro { max-width: 760px; margin-left: max(0px, calc((100% - 1240px) / 2)) !important; margin-right: auto !important; }
+.is-layout-constrained > .ma-intro { max-width: 1240px; margin-left: max(0px, calc((100% - 1240px) / 2)) !important; margin-right: auto !important; }
 .ma-carte-video video { object-fit: cover; }
 /* En-tête : tout sur une ligne */
 header .ma-signature-titre, header .wp-block-navigation-item__content, header .wp-block-button__link { white-space: nowrap; }
@@ -265,3 +265,6 @@ header .wp-block-social-links .wp-social-link svg { width: 20px; height: 20px; }
 	.ma-propositions li { grid-template-columns: 1fr; }
 	.ma-couverture img { margin: 0 auto; }
 }
+
+/* 1.5.1 : liseré fin autour des vignettes d'articles */
+.wp-block-post-template .wp-block-post-featured-image img { box-shadow: 0 0 0 1px rgba(23, 42, 70, 0.18); }
