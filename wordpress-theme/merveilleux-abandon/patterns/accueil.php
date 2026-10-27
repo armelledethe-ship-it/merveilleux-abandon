@@ -146,9 +146,21 @@ $img = function ( $f ) {
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%">
+<?php
+$ma_v = get_page_by_path( 'l-apres-episode', OBJECT, 'attachment' );
+$ma_p = get_page_by_path( 'l-apres-episode-affiche', OBJECT, 'attachment' );
+if ( $ma_v ) :
+	$ma_vurl = esc_url( wp_get_attachment_url( $ma_v->ID ) );
+	$ma_purl = $ma_p ? esc_url( wp_get_attachment_url( $ma_p->ID ) ) : '';
+?>
+<!-- wp:video {"id":<?php echo (int) $ma_v->ID; ?>,"className":"ma-video-verticale"} -->
+<figure class="wp-block-video ma-video-verticale"><video controls playsinline preload="metadata" poster="<?php echo $ma_purl; ?>" src="<?php echo $ma_vurl; ?>"></video></figure>
+<!-- /wp:video -->
+<?php else : ?>
 <!-- wp:paragraph {"align":"center","backgroundColor":"nuit","textColor":"blanc","style":{"spacing":{"padding":{"top":"120px","bottom":"120px"}},"border":{"radius":"4px"}}} -->
-<p class="has-text-align-center has-blanc-color has-nuit-background-color has-text-color has-background" style="border-radius:4px;padding-top:120px;padding-bottom:120px">[Vidéo du dernier épisode de L'Après : coller ici le lien YouTube ou Instagram]</p>
+<p class="has-text-align-center has-blanc-color has-nuit-background-color has-text-color has-background" style="border-radius:4px;padding-top:120px;padding-bottom:120px">L'Après, bientôt ici.</p>
 <!-- /wp:paragraph -->
+<?php endif; ?>
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"48%"} -->
