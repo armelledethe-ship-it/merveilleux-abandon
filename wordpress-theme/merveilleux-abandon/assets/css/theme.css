@@ -175,3 +175,19 @@ h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--
 	.single .wp-block-post-content > p { text-align: left; }
 	.ma-chapo { font-size: 1.0625rem; }
 }
+
+/* Rubrique d'article : pas de soulignement */
+.ma-surtitre a { text-decoration: none; color: inherit; }
+.ma-surtitre a:hover { text-decoration: underline; }
+
+/* Page Écouter */
+.ma-ecouter-section { scroll-margin-top: 24px; }
+.ma-cartes-video { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 32px; margin-top: 40px; }
+.ma-carte-video { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ma-carte-video video { width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #0F1B2D; border-radius: 4px; display: block; }
+.ma-carte-video .ma-surtitre { margin-top: 8px; }
+.ma-carte-video h3 { font-size: 1.375rem; font-weight: 400; line-height: 1.25; margin: 0; }
+.ma-carte-video p { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--wp--preset--color--ardoise); }
+.ma-carte-video .ma-duree { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
+@media (max-width: 900px) { .ma-cartes-video { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ma-cartes-video { grid-template-columns: 1fr; } }
