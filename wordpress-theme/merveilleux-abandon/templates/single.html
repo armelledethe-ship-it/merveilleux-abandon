@@ -1,18 +1,37 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="padding-top:40px;padding-bottom:40px">
-<!-- wp:post-terms {"term":"category","className":"ma-surtitre"} /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"0","bottom":"48px"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="padding-top:0;padding-bottom:48px">
+<!-- wp:group {"align":"full","className":"ma-article-hero","style":{"spacing":{"padding":{"top":"64px","bottom":"48px"},"margin":{"top":"0"}}},"backgroundColor":"blanc","layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull ma-article-hero has-blanc-background-color has-background" style="margin-top:0;padding-top:64px;padding-bottom:48px">
+<!-- wp:post-terms {"term":"category","className":"ma-surtitre","style":{"spacing":{"margin":{"bottom":"28px"}}}} /-->
+<!-- wp:columns {"verticalAlignment":"bottom","style":{"spacing":{"blockGap":{"left":"64px"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-bottom">
+<!-- wp:column {"verticalAlignment":"bottom","width":"64%"} -->
+<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:64%">
 <!-- wp:post-title {"level":1} /-->
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"typography":{"fontSize":"0.9375rem"}},"textColor":"ardoise"} -->
-<div class="wp-block-group has-ardoise-color has-text-color" style="font-size:0.9375rem">
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"verticalAlignment":"bottom","width":"36%"} -->
+<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:36%">
+<!-- wp:post-excerpt {"className":"ma-chapo"} /-->
+<!-- wp:group {"className":"ma-meta","style":{"spacing":{"blockGap":"4px","margin":{"top":"24px"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group ma-meta" style="margin-top:24px">
 <!-- wp:paragraph -->
 <p>Armelle de Thé</p>
 <!-- /wp:paragraph -->
 <!-- wp:post-date /-->
 </div>
 <!-- /wp:group -->
-<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover","style":{"spacing":{"margin":{"top":"24px","bottom":"28px"}}}} /-->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"40px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:40px">
+<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover","style":{"spacing":{"margin":{"bottom":"40px"}}}} /-->
 <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
 
 <!-- wp:separator {"backgroundColor":"corail","style":{"spacing":{"margin":{"top":"40px","bottom":"24px"}}}} -->
@@ -24,20 +43,22 @@
 <!-- wp:paragraph {"className":"ma-aide","style":{"typography":{"fontSize":"0.9375rem"},"spacing":{"margin":{"top":"28px"}}},"textColor":"ardoise"} -->
 <p class="ma-aide has-ardoise-color has-text-color" style="margin-top:28px;font-size:0.9375rem">Si cette lecture remue des choses difficiles, n'attendez pas pour en parler à un proche ou à un professionnel. En cas de détresse, le 3114 répond jour et nuit, gratuitement.</p>
 <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"48px","bottom":"48px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
 <div class="wp-block-group alignfull" style="margin-top:0;padding-top:48px;padding-bottom:48px">
 <!-- wp:heading {"style":{"typography":{"fontSize":"2rem"}}} -->
-<h2 class="wp-block-heading" style="font-size:2rem">Lire aussi</h2>
+<h2 class="wp-block-heading" style="font-size:2rem">Lire <em>aussi</em></h2>
 <!-- /wp:heading -->
 <!-- wp:query {"queryId":3,"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date","inherit":false},"className":"ma-lire-aussi","style":{"spacing":{"margin":{"top":"24px"}}}} -->
 <div class="wp-block-query ma-lire-aussi" style="margin-top:24px">
 <!-- wp:post-template {"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"260px"},"style":{"spacing":{"blockGap":"32px"}}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 <!-- wp:post-terms {"term":"category","className":"ma-surtitre","style":{"typography":{"fontSize":"0.8125rem"}}} /-->
-<!-- wp:post-title {"isLink":true,"level":3,"style":{"typography":{"fontSize":"1.375rem","lineHeight":"1.25"}}} /-->
+<!-- wp:post-title {"isLink":true,"level":3,"style":{"typography":{"fontSize":"1.375rem","lineHeight":"1.25","fontWeight":"400"}}} /-->
 <!-- /wp:post-template -->
 </div>
 <!-- /wp:query -->

@@ -61,8 +61,8 @@ $img = function ( $f ) {
 <div class="wp-block-columns" style="margin-top:24px">
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700"}}} -->
-<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:700">01</p>
+<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"500"}}} -->
+<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:500">01</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"textColor":"blanc","style":{"typography":{"fontSize":"2rem"}}} -->
 <h2 class="wp-block-heading has-blanc-color has-text-color" style="font-size:2rem">Je témoigne</h2>
@@ -74,8 +74,8 @@ $img = function ( $f ) {
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700"}}} -->
-<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:700">02</p>
+<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"500"}}} -->
+<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:500">02</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"textColor":"blanc","style":{"typography":{"fontSize":"2rem"}}} -->
 <h2 class="wp-block-heading has-blanc-color has-text-color" style="font-size:2rem">Je donne la parole</h2>
@@ -87,8 +87,8 @@ $img = function ( $f ) {
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700"}}} -->
-<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:700">03</p>
+<!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"500"}}} -->
+<p class="has-corail-clair-color has-text-color" style="font-size:0.875rem;font-weight:500">03</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"textColor":"blanc","style":{"typography":{"fontSize":"2rem"}}} -->
 <h2 class="wp-block-heading has-blanc-color has-text-color" style="font-size:2rem">Je restitue</h2>
@@ -120,8 +120,8 @@ $img = function ( $f ) {
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:paragraph {"style":{"typography":{"fontWeight":"700"}}} -->
-<p style="font-weight:700"><a href="/comprendre/">Tous les articles →</a></p>
+<!-- wp:paragraph {"style":{"typography":{"fontWeight":"500"}}} -->
+<p style="font-weight:500"><a href="/comprendre/">Tous les articles →</a></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -289,8 +289,8 @@ if ( $ma_v ) :
 <p>Famille Chrétienne</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
-<!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"700"}}} -->
-<p class="has-text-align-center" style="font-weight:700"><a href="/presse/">Toutes les interviews →</a></p>
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"500"}}} -->
+<p class="has-text-align-center" style="font-weight:500"><a href="/presse/">Toutes les interviews →</a></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -328,8 +328,8 @@ if ( $ma_v ) :
 <div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.placedeslibraires.fr/livre/9782889841141-merveilleux-abandon-recit-d-une-experience-humaine-et-universelle-armelle-de-the-zoe-le-gavrian/" target="_blank" rel="noreferrer noopener">Chez votre libraire</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem","fontWeight":"700"}}} -->
-<p style="font-size:0.9375rem;font-weight:700"><a href="#newsletter">Ou lisez d'abord les 20 premières pages, offertes →</a></p>
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem","fontWeight":"500"}}} -->
+<p style="font-size:0.9375rem;font-weight:500"><a href="#newsletter">Ou lisez d'abord les 20 premières pages, offertes →</a></p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

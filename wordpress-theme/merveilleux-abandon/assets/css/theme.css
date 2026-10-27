@@ -2,9 +2,9 @@
 
 .ma-surtitre {
 	margin: 0;
-	font-size: 0.875rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
+	font-size: 0.6875rem;
+	font-weight: 500;
+	letter-spacing: 0.32em;
 	text-transform: uppercase;
 	color: var(--wp--preset--color--corail-texte);
 }
@@ -54,7 +54,8 @@
 .ma-mur-presse {
 	font-family: var(--wp--preset--font-family--titre);
 	font-size: 1.5rem;
-	font-weight: 600;
+	font-weight: 400;
+	font-style: italic;
 	color: #3B4C68;
 	gap: 20px 44px !important;
 }
@@ -84,11 +85,11 @@ button:focus-visible,
 }
 .ma-nl button {
 	min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; cursor: pointer;
-	background: var(--wp--preset--color--corail); color: #fff; font: inherit; font-weight: 700;
+	background: var(--wp--preset--color--corail); color: #fff; font: inherit; font-weight: 500;
 }
 .ma-nl button:hover { background: var(--wp--preset--color--corail-texte); }
 .ma-nl-mention { font-size: 0.8125rem; color: var(--wp--preset--color--ardoise); margin-top: 12px; }
-.ma-nl-ok { font-weight: 700; color: var(--wp--preset--color--nuit); }
+.ma-nl-ok { font-weight: 500; color: var(--wp--preset--color--nuit); }
 
 /* Catégories sur la page Comprendre */
 .ma-categories { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
@@ -132,4 +133,45 @@ button:focus-visible,
 @media (max-width: 600px) {
 	.ma-duo { gap: 10px; padding-bottom: 28px; }
 	.ma-duo figure:last-child { transform: translateY(28px); }
+}
+
+/* ===== Typographie éditoriale (reprise du site d'origine) ===== */
+.ma-surtitre { display: flex; align-items: center; gap: 0.9rem; }
+.ma-surtitre::before { content: ""; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
+.has-text-align-center.ma-surtitre, .ma-surtitre.has-text-align-center { justify-content: center; }
+h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--wp--preset--color--ardoise); }
+.wp-block-site-title em { font-style: italic; font-weight: 400; }
+
+/* En-tête d'article : titre à gauche, chapô à droite */
+.ma-article-hero { border-bottom: 2px solid var(--wp--preset--color--nuit); }
+.ma-article-hero .wp-block-post-title { font-weight: 300; line-height: 1.05; margin: 0; }
+.ma-chapo, .ma-chapo p {
+	font-family: var(--wp--preset--font-family--titre); font-style: italic; font-weight: 300;
+	font-size: 1.125rem; line-height: 1.75; color: rgba(23, 42, 70, 0.75);
+}
+.ma-chapo { padding-left: 1.5rem; border-left: 2px solid var(--wp--preset--color--nuit); margin: 0; }
+.ma-chapo p { margin: 0; }
+.ma-meta, .ma-meta p, .ma-meta time { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--wp--preset--color--ardoise); font-weight: 400; }
+
+/* Corps d'article */
+.single .wp-block-post-content > p,
+.single .wp-block-post-content > ul li,
+.single .wp-block-post-content > ol li {
+	font-size: 1.0625rem; line-height: 2; font-weight: 300; color: #2A2F3A;
+	text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+}
+.single .wp-block-post-content > p { margin-bottom: 1.6rem; }
+.single .wp-block-post-content > h2 {
+	font-size: 1.9rem; font-weight: 300; line-height: 1.2;
+	margin-top: 3.5rem; margin-bottom: 1.6rem; padding-bottom: 0.9rem;
+	border-bottom: 1px solid rgba(23, 42, 70, 0.12);
+}
+.single .wp-block-post-content > h3 { font-size: 1.375rem; font-weight: 400; margin-top: 2.5rem; }
+.single .wp-block-post-content strong { font-weight: 500; }
+.wp-block-quote p { margin: 0; }
+.wp-block-quote cite { display: block; margin-top: 1rem; font-family: var(--wp--preset--font-family--texte); font-style: normal; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; }
+.wp-block-post-content .wp-block-quote { margin: 3rem 0; }
+@media (max-width: 781px) {
+	.single .wp-block-post-content > p { text-align: left; }
+	.ma-chapo { font-size: 1.0625rem; }
 }

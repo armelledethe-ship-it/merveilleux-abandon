@@ -18,7 +18,7 @@ add_action( 'after_setup_theme', function () {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style(
 		'ma-fonts',
-		'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap',
+		'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap',
 		array(),
 		null
 	);
@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', function () {
 add_action( 'enqueue_block_editor_assets', function () {
 	wp_enqueue_style(
 		'ma-fonts-editor',
-		'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap',
+		'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap',
 		array(),
 		null
 	);
