@@ -115,3 +115,10 @@ button:focus-visible,
 @media (max-width: 600px) {
 	.ma-signature-titre { font-size: 1.625rem !important; }
 }
+
+/* Surtitres dans le contenu : respiration avant une nouvelle partie */
+.wp-block-post-content > .ma-surtitre:not(:first-child) { margin-top: 2.75rem; }
+.wp-block-post-content > .ma-surtitre + .wp-block-heading { margin-top: 0.5rem; }
+/* En-tête sur une ligne sur grand écran ; menu burger en dessous */
+@media (min-width: 1100px) { header .wp-block-group.is-layout-flex { flex-wrap: nowrap; } }
+@media (max-width: 1099px) { header .wp-block-navigation__responsive-container-open:not(.always-shown) { display: flex; } header .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: none; } }
