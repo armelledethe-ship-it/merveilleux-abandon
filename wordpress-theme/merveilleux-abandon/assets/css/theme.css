@@ -195,3 +195,6 @@ h1 em, h2 em, h3 em, .wp-block-post-title em { font-style: italic; color: var(--
 .ma-chapitres-rue li { border-top: 1px solid var(--wp--preset--color--nuit); padding-top: 16px; font-size: 0.9375rem; line-height: 1.6; color: var(--wp--preset--color--ardoise); }
 .ma-chapitres-rue span { display: block; font-family: var(--wp--preset--font-family--titre); font-style: italic; font-size: 1.375rem; color: var(--wp--preset--color--nuit); margin-bottom: 6px; }
 @media (max-width: 700px) { .ma-chapitres-rue { grid-template-columns: 1fr; } }
+/* Paragraphe d'introduction aligné sur le titre */
+.is-layout-constrained > .ma-intro { max-width: 760px; margin-left: max(0px, calc((100% - var(--wp--style--global--content-size, 1240px)) / 2)) !important; margin-right: auto !important; }
+.ma-carte-video video { object-fit: cover; }
