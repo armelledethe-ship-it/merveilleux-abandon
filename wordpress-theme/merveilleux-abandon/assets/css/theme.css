@@ -89,3 +89,18 @@ button:focus-visible,
 .ma-nl button:hover { background: var(--wp--preset--color--corail-texte); }
 .ma-nl-mention { font-size: 0.8125rem; color: var(--wp--preset--color--ardoise); margin-top: 12px; }
 .ma-nl-ok { font-weight: 700; color: var(--wp--preset--color--nuit); }
+
+/* Catégories sur la page Comprendre */
+.ma-categories { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.ma-categories li a {
+	display: inline-block; padding: 8px 16px; border: 1px solid var(--wp--preset--color--nuit);
+	border-radius: 999px; text-decoration: none; font-size: 0.875rem; font-weight: 500;
+}
+.ma-categories li a:hover { background: var(--wp--preset--color--nuit); color: #fff; }
+
+/* Vidéos verticales (Instagram, réels) */
+.ma-video-verticale { max-width: 380px; margin-left: auto; margin-right: auto; }
+.ma-video-verticale video { width: 100%; border-radius: 6px; display: block; }
+
+/* Ligne d'aide en fin d'article */
+.ma-aide { border-top: 1px solid #E6E2DC; padding-top: 20px; }

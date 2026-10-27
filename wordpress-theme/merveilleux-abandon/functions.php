@@ -43,3 +43,26 @@ add_action( 'enqueue_block_editor_assets', function () {
 add_action( 'init', function () {
 	register_block_pattern_category( 'merveilleux-abandon', array( 'label' => 'Merveilleux Abandon' ) );
 } );
+
+/* « Lire aussi » : exclut l'article affiché, privilégie sa catégorie. */
+add_filter( 'query_loop_block_query_vars', function ( $query, $block ) {
+	$class = $block->parsed_block['attrs']['className'] ?? '';
+	if ( false === strpos( $class, 'ma-lire-aussi' ) || ! is_singular( 'post' ) ) {
+		return $query;
+	}
+	$current               = get_queried_object_id();
+	$query['post__not_in'] = array( $current );
+	$query['ignore_sticky_posts'] = true;
+	$same = get_posts( array(
+		'post_type'      => 'post',
+		'posts_per_page' => 3,
+		'post__not_in'   => array( $current ),
+		'category__in'   => wp_get_post_categories( $current ),
+		'fields'         => 'ids',
+	) );
+	if ( count( $same ) >= 3 ) {
+		$query['post__in'] = $same;
+		$query['orderby']  = 'post__in';
+	}
+	return $query;
+}, 10, 2 );
