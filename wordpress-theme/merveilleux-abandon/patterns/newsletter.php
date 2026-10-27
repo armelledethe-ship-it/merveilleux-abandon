@@ -25,6 +25,8 @@ $ma_brevo = 'https://5a2988f1.sibforms.com/serve/MUIFAEtdg7HAYpHBubES44O6JVy6EpM
 		<input id="ma-nl-nom" type="text" name="NOM" placeholder="Votre nom" required>
 		<label class="screen-reader-text" for="ma-nl-email">Votre adresse e-mail</label>
 		<input id="ma-nl-email" type="email" name="EMAIL" placeholder="Votre adresse e-mail" required>
+		<input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+		<input type="hidden" name="locale" value="fr">
 		<button type="submit">Je m'inscris</button>
 	</div>
 	<p class="ma-nl-mention">Désinscription en un clic. Votre adresse n'est jamais partagée.</p>
