@@ -9,8 +9,8 @@ $img = function ( $f ) {
 	return esc_url( get_theme_file_uri( 'assets/images/' . $f ) );
 };
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"72px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0;padding-top:80px;padding-bottom:72px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"48px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;padding-top:56px;padding-bottom:48px">
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
@@ -24,8 +24,8 @@ $img = function ( $f ) {
 <!-- wp:paragraph {"style":{"color":{"text":"#2E3E5A"}},"fontSize":"grand"} -->
 <p class="has-text-color has-grand-font-size" style="color:#2E3E5A">Je suis Armelle de Thé. Je raconte mon histoire, je donne la parole à celles et ceux qui ont traversé un abandon, et je vous restitue ce que j'en ai appris. Pour qu'un deuil, une rupture ou un licenciement deviennent un nouveau départ.</p>
 <!-- /wp:paragraph -->
-<!-- wp:buttons {"style":{"spacing":{"blockGap":"16px","margin":{"top":"32px"}}}} -->
-<div class="wp-block-buttons" style="margin-top:32px"><!-- wp:button -->
+<!-- wp:buttons {"style":{"spacing":{"blockGap":"16px","margin":{"top":"24px"}}}} -->
+<div class="wp-block-buttons" style="margin-top:24px"><!-- wp:button -->
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/comprendre/">Comprendre la blessure d'abandon</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
@@ -55,13 +55,13 @@ $img = function ( $f ) {
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","backgroundColor":"nuit","textColor":"blanc","style":{"spacing":{"padding":{"top":"72px","bottom":"72px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull has-blanc-color has-nuit-background-color has-text-color has-background" style="margin-top:0;padding-top:72px;padding-bottom:72px">
+<!-- wp:group {"align":"full","backgroundColor":"nuit","textColor":"blanc","style":{"spacing":{"padding":{"top":"48px","bottom":"48px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull has-blanc-color has-nuit-background-color has-text-color has-background" style="margin-top:0;padding-top:48px;padding-bottom:48px">
 <!-- wp:paragraph {"textColor":"corail-clair","fontFamily":"signature","style":{"typography":{"fontStyle":"italic","fontSize":"1.375rem"}}} -->
 <p class="has-corail-clair-color has-text-color has-signature-font-family" style="font-size:1.375rem;font-style:italic">Abandonner · Donner · Transmettre</p>
 <!-- /wp:paragraph -->
-<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"40px"},"margin":{"top":"32px"}}}} -->
-<div class="wp-block-columns" style="margin-top:32px">
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"40px"},"margin":{"top":"24px"}}}} -->
+<div class="wp-block-columns" style="margin-top:24px">
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:paragraph {"textColor":"corail-clair","style":{"typography":{"fontSize":"0.875rem","fontWeight":"700"}}} -->
@@ -106,8 +106,8 @@ $img = function ( $f ) {
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"88px","bottom":"88px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0;padding-top:88px;padding-bottom:88px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"56px","bottom":"56px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;padding-top:56px;padding-bottom:56px">
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group">
 <!-- wp:group {"style":{"spacing":{"blockGap":"12px"},"layout":{"selfStretch":"fixed","flexSize":"720px"}},"layout":{"type":"default"}} -->
@@ -128,8 +128,8 @@ $img = function ( $f ) {
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:query {"queryId":2,"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date","inherit":false},"style":{"spacing":{"margin":{"top":"40px"}}}} -->
-<div class="wp-block-query" style="margin-top:40px">
+<!-- wp:query {"queryId":2,"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date","inherit":false},"style":{"spacing":{"margin":{"top":"28px"}}}} -->
+<div class="wp-block-query" style="margin-top:28px">
 <!-- wp:post-template {"layout":{"type":"grid","columnCount":3,"minimumColumnWidth":"280px"},"style":{"spacing":{"blockGap":"32px"}}} -->
 <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
 <!-- wp:post-terms {"term":"category","className":"ma-surtitre","style":{"typography":{"fontSize":"0.8125rem"}}} /-->
@@ -140,8 +140,8 @@ $img = function ( $f ) {
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"88px","bottom":"88px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;padding-top:88px;padding-bottom:88px">
+<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"56px","bottom":"56px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;padding-top:56px;padding-bottom:56px">
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
@@ -186,8 +186,8 @@ if ( $ma_v ) :
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"96px","bottom":"96px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"860px"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0;padding-top:96px;padding-bottom:96px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"64px","bottom":"64px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"860px"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;padding-top:64px;padding-bottom:64px">
 <!-- wp:paragraph {"align":"center","className":"ma-surtitre"} -->
 <p class="has-text-align-center ma-surtitre">Le Registre des abandons</p>
 <!-- /wp:paragraph -->
@@ -205,8 +205,8 @@ if ( $ma_v ) :
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","backgroundColor":"nuit","textColor":"blanc","style":{"spacing":{"padding":{"top":"88px","bottom":"88px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull has-blanc-color has-nuit-background-color has-text-color has-background" style="margin-top:0;padding-top:88px;padding-bottom:88px">
+<!-- wp:group {"align":"full","backgroundColor":"nuit","textColor":"blanc","style":{"spacing":{"padding":{"top":"56px","bottom":"56px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull has-blanc-color has-nuit-background-color has-text-color has-background" style="margin-top:0;padding-top:56px;padding-bottom:56px">
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns">
 <!-- wp:column {"width":"55%"} -->
@@ -268,8 +268,8 @@ if ( $ma_v ) :
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"72px","bottom":"72px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull" style="margin-top:0;padding-top:72px;padding-bottom:72px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"48px","bottom":"48px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;padding-top:48px;padding-bottom:48px">
 <!-- wp:paragraph {"align":"center","textColor":"ardoise","className":"ma-surtitre"} -->
 <p class="has-text-align-center ma-surtitre has-ardoise-color has-text-color">Ils en ont parlé</p>
 <!-- /wp:paragraph -->
@@ -298,8 +298,8 @@ if ( $ma_v ) :
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"88px","bottom":"88px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
-<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;padding-top:88px;padding-bottom:88px">
+<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"56px","bottom":"56px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","contentSize":"1240px"}} -->
+<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;padding-top:56px;padding-bottom:56px">
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center","width":"35%"} -->
@@ -328,9 +328,12 @@ if ( $ma_v ) :
 <div class="wp-block-button"><a class="wp-block-button__link has-nuit-background-color has-background wp-element-button" href="https://bit.ly/43sooAy" target="_blank" rel="noreferrer noopener">Acheter le livre</a></div>
 <!-- /wp:button -->
 <!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#newsletter">Lire les 20 premières pages</a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://www.placedeslibraires.fr/livre/9782889841141-merveilleux-abandon-recit-d-une-experience-humaine-et-universelle-armelle-de-the-zoe-le-gavrian/" target="_blank" rel="noreferrer noopener">Chez votre libraire</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.9375rem","fontWeight":"700"}}} -->
+<p style="font-size:0.9375rem;font-weight:700"><a href="#newsletter">Ou lisez d'abord les 20 premières pages, offertes →</a></p>
+<!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 </div>

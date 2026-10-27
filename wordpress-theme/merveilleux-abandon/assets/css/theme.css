@@ -107,3 +107,11 @@ button:focus-visible,
 
 /* Images d'en-tête d'article : cadrage sur le haut (visages) */
 .single .wp-block-post-featured-image img { object-position: center 25%; }
+
+/* Rythme vertical resserré */
+:root { --wp--style--block-gap: 1.25rem; }
+.wp-block-heading { margin-top: 0; }
+.wp-block-post-content > * + .wp-block-heading { margin-top: 2.25rem; }
+@media (max-width: 600px) {
+	.ma-signature-titre { font-size: 1.625rem !important; }
+}

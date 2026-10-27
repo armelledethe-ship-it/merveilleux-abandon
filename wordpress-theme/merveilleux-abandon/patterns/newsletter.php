@@ -7,8 +7,8 @@
  */
 $ma_brevo = 'https://5a2988f1.sibforms.com/serve/MUIFAEtdg7HAYpHBubES44O6JVy6EpMBNEFAIVJ1UCdm4PGBZTATxk4tiz1p9cnx1ngXtWBo5V_us1fasTP5ZQEFG0ywB1ZCJp28sq2DI1Ga8CeMZMc39i5MwRr_QGrXafZ9WCdO0agkanJjatHwS7ZxBSf60C8DBylLK9eTC7dZTdaAEdy_o1o9PhvRpnBFdUu8aE3py2tnnSs6VQ==';
 ?>
-<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"88px","bottom":"88px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"760px"}} -->
-<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:88px;padding-bottom:88px">
+<!-- wp:group {"align":"full","backgroundColor":"creme","style":{"spacing":{"padding":{"top":"56px","bottom":"56px"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","contentSize":"760px"}} -->
+<div class="wp-block-group alignfull has-creme-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:56px;padding-bottom:56px">
 <!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center" id="newsletter">Recevez les 20 premières pages du livre</h2>
 <!-- /wp:heading -->
