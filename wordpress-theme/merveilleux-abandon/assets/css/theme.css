@@ -1,0 +1,91 @@
+/* Merveilleux Abandon — compléments au theme.json */
+
+.ma-surtitre {
+	margin: 0;
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--corail-texte);
+}
+.has-nuit-background-color .ma-surtitre,
+.has-nuit-profond-background-color .ma-surtitre {
+	color: var(--wp--preset--color--corail-clair);
+}
+
+.ma-signature-titre em,
+.wp-block-site-title em {
+	color: var(--wp--preset--color--corail);
+	font-weight: 500;
+}
+
+/* Bouton secondaire : contour bleu nuit */
+.wp-block-button.is-style-outline > .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--nuit);
+	border: 2px solid currentColor;
+}
+.has-nuit-background-color .wp-block-button.is-style-outline > .wp-block-button__link {
+	color: var(--wp--preset--color--blanc);
+}
+
+/* Mosaïque Hôtel-Dieu */
+.ma-mosaique {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-rows: 210px 210px 170px;
+	gap: 8px;
+}
+.ma-mosaique figure { margin: 0; height: 100%; }
+.ma-mosaique img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; display: block; }
+.ma-mosaique figure:first-child { grid-row: span 2; }
+@media (max-width: 600px) {
+	.ma-mosaique { grid-template-rows: 180px 180px 140px; }
+}
+
+/* Cartes publics conférences */
+.ma-carte-public {
+	border: 1px solid #3B4C68;
+	border-radius: 4px;
+	padding: 24px;
+}
+
+/* Mur presse */
+.ma-mur-presse {
+	font-family: var(--wp--preset--font-family--titre);
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #3B4C68;
+	gap: 20px 44px !important;
+}
+
+/* Images d'articles en liste */
+.wp-block-post-featured-image img { border-radius: 4px; }
+
+/* Pied de page */
+.ma-footer a { color: #D5DCE8; }
+.ma-footer a:hover { color: var(--wp--preset--color--blanc); }
+
+/* Focus visible pour l'accessibilité */
+a:focus-visible,
+button:focus-visible,
+.wp-block-button__link:focus-visible {
+	outline: 3px solid var(--wp--preset--color--corail);
+	outline-offset: 3px;
+}
+
+/* Newsletter */
+.ma-nl { max-width: 640px; margin: 24px auto 0; text-align: center; }
+.ma-nl-champs { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.ma-nl input {
+	flex: 1 1 180px; min-height: 52px; padding: 0 20px;
+	border: 2px solid var(--wp--preset--color--nuit); border-radius: 999px;
+	font: inherit; font-size: 1rem; color: var(--wp--preset--color--nuit); background: #fff;
+}
+.ma-nl button {
+	min-height: 52px; padding: 0 28px; border: 0; border-radius: 999px; cursor: pointer;
+	background: var(--wp--preset--color--corail); color: #fff; font: inherit; font-weight: 700;
+}
+.ma-nl button:hover { background: var(--wp--preset--color--corail-texte); }
+.ma-nl-mention { font-size: 0.8125rem; color: var(--wp--preset--color--ardoise); margin-top: 12px; }
+.ma-nl-ok { font-weight: 700; color: var(--wp--preset--color--nuit); }
