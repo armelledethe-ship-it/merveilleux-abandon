@@ -104,3 +104,6 @@ button:focus-visible,
 
 /* Ligne d'aide en fin d'article */
 .ma-aide { border-top: 1px solid #E6E2DC; padding-top: 20px; }
+
+/* Images d'en-tête d'article : cadrage sur le haut (visages) */
+.single .wp-block-post-featured-image img { object-position: center 25%; }
