@@ -13,8 +13,8 @@ $img = function ( $f ) {
 <div class="wp-block-group alignfull" style="margin-top:0;padding-top:56px;padding-bottom:48px">
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"56px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center">
-<!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%">
+<!-- wp:column {"verticalAlignment":"center","width":"52%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:52%">
 <!-- wp:paragraph {"className":"ma-surtitre"} -->
 <p class="ma-surtitre">La blessure d'abandon, racontée par celle qui l'a vécue</p>
 <!-- /wp:paragraph -->
@@ -34,18 +34,15 @@ $img = function ( $f ) {
 <!-- /wp:buttons -->
 </div>
 <!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"center","width":"42%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%">
+<!-- wp:column {"verticalAlignment":"center","width":"48%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%">
 <!-- wp:html -->
-<figure class="ma-mosaique-bloc" style="margin:0">
-	<div class="ma-mosaique">
-		<figure><img src="<?php echo $img( 'hotel-dieu-galerie.jpg' ); ?>" alt="Armelle marche seule dans la galerie voûtée de l'Hôtel-Dieu" style="object-position:center 40%"></figure>
-		<figure><img src="<?php echo $img( 'hotel-dieu-portrait.jpg' ); ?>" alt="Portrait d'Armelle, regard au loin, sous les arcades" style="object-position:center 45%"></figure>
-		<figure><img src="<?php echo $img( 'hotel-dieu-escalier-couleur.jpg' ); ?>" alt="Armelle accroupie au pied d'un mur de pierre" style="object-position:center 80%"></figure>
-		<figure><img src="<?php echo $img( 'hotel-dieu-escalier-nb.jpg' ); ?>" alt="Armelle debout dans la cage d'escalier" style="object-position:center 35%"></figure>
-		<figure><img src="<?php echo $img( 'hotel-dieu-dos-couleur.jpg' ); ?>" alt="Armelle de dos, s'éloignant dans le couloir" style="object-position:center 30%"></figure>
+<figure class="ma-duo-bloc" style="margin:0">
+	<div class="ma-duo">
+		<figure><img src="<?php echo $img( 'hotel-dieu-dos-nb.jpg' ); ?>" alt="Armelle de dos, s'éloignant dans la galerie de l'Hôtel-Dieu" style="object-position:center 35%"></figure>
+		<figure><img src="<?php echo $img( 'hotel-dieu-portrait.jpg' ); ?>" alt="Armelle de face sous les arcades de l'Hôtel-Dieu" style="object-position:center 40%"></figure>
 	</div>
-	<figcaption style="margin-top:12px;font-size:0.875rem;color:#4A5A75">Hôtel-Dieu de Paris, où je suis née le 27 juin 1967. Photos Sophie Thouvenin.</figcaption>
+	<figcaption>Hôtel-Dieu de Paris, où je suis née le 27 juin 1967. Photos Sophie Thouvenin.</figcaption>
 </figure>
 <!-- /wp:html -->
 </div>
