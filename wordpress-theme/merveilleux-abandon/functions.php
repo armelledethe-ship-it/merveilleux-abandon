@@ -39,6 +39,8 @@ add_action( 'enqueue_block_editor_assets', function () {
 	);
 } );
 
+require_once get_theme_file_path( 'inc/consentement.php' );
+
 /* Catégorie de compositions propre au site. */
 add_action( 'init', function () {
 	register_block_pattern_category( 'merveilleux-abandon', array( 'label' => 'Merveilleux Abandon' ) );

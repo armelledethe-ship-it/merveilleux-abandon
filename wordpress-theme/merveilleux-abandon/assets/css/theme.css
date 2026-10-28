@@ -268,3 +268,19 @@ header .wp-block-social-links .wp-social-link svg { width: 20px; height: 20px; }
 
 /* 1.5.1 : liseré fin autour des vignettes d'articles */
 .wp-block-post-template .wp-block-post-featured-image img { box-shadow: 0 0 0 1px rgba(23, 42, 70, 0.18); }
+
+/* 1.6.0 : bandeau cookies et lecteurs en attente de consentement */
+.ma-cookies { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 9999; max-width: 760px; margin: 0 auto; background: #172A46; color: #F7F2EA; border-radius: 8px; padding: 20px 24px; box-shadow: 0 10px 40px rgba(0,0,0,.25); display: flex; gap: 20px; align-items: center; font-size: .9rem; line-height: 1.55; }
+.ma-cookies[hidden] { display: none; }
+.ma-cookies p { margin: 0; flex: 1; }
+.ma-cookies a { color: #F7F2EA; text-decoration: underline; }
+.ma-cookies-boutons { display: flex; gap: 10px; flex-shrink: 0; }
+.ma-cookies button { font: inherit; font-weight: 500; border-radius: 999px; padding: 10px 18px; cursor: pointer; border: 1px solid #F7F2EA; }
+.ma-cookies-refus { background: transparent; color: #F7F2EA; }
+.ma-cookies-accord { background: #F7F2EA; color: #172A46; }
+@media (max-width: 700px) { .ma-cookies { flex-direction: column; align-items: stretch; } .ma-cookies-boutons button { flex: 1; } }
+.ma-iframe-attente { position: relative; }
+.ma-iframe-attente:not(.ma-iframe-ok) iframe { visibility: hidden; }
+.ma-iframe-attente:not(.ma-iframe-ok) { background: #EEE8DE; border-radius: 12px; }
+.ma-iframe-accord { position: absolute; inset: 0; margin: auto; height: fit-content; width: fit-content; max-width: 90%; font: inherit; font-size: .875rem; background: #172A46; color: #F7F2EA; border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; }
+.ma-iframe-ok .ma-iframe-accord { display: none; }
