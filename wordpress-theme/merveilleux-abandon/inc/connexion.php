@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 add_filter( 'site_url', function ( $url, $path ) {
 	if ( is_string( $path ) && false !== strpos( $path, 'external=oauth2' ) ) {
-		return 'http://nouveau.merveilleuxabandon.fr/' . ltrim( $path, '/' );
+		return 'https://nouveau.merveilleuxabandon.fr/' . ltrim( $path, '/' );
 	}
 	return $url;
 }, 10, 2 );
