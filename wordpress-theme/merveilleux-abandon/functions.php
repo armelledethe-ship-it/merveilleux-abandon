@@ -40,6 +40,7 @@ add_action( 'enqueue_block_editor_assets', function () {
 } );
 
 require_once get_theme_file_path( 'inc/consentement.php' );
+require_once get_theme_file_path( 'inc/connexion.php' );
 
 /* Catégorie de compositions propre au site. */
 add_action( 'init', function () {
